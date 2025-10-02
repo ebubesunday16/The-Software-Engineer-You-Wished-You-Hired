@@ -126,7 +126,7 @@ const ZoomZoom = () => {
           </motion.div>
 
           <motion.div 
-          className=' mx-auto items-center text-center text-white border font-champBlack space-y-5  text-4xl'
+          className=' mx-auto items-center text-center text-white  font-champBlack space-y-5  text-4xl'
           style={{
             y: useTransform(scrollYProgress, [0.595, 0.61], [0, -530]),
             opacity: useTransform(scrollYProgress, [0.595, 0.61], [0, 1])
@@ -174,7 +174,7 @@ const ZoomZoom = () => {
           </motion.div>
 
           <motion.div 
-          className='self-center space-y-4 mt-auto border-white border'
+          className='self-center space-y-4 mt-auto '
           style={{
             y: useTransform(scrollYProgress, [0.61, 0.62], [0, -480]),
             opacity: useTransform(scrollYProgress, [0.62, 0.8], [0, 1]),
