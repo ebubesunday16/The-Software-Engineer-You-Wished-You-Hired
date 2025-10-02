@@ -1,6 +1,6 @@
 'use client'
 import { Images } from '@/assets/png'
-import { Leaf } from '@/assets/svg'
+import { Leaf, Leaf2 } from '@/assets/svg'
 import { motion, useMotionValueEvent, useTransform } from 'motion/react'
 import { useScroll } from 'motion/react'
 import Image from 'next/image'
@@ -45,7 +45,7 @@ const FunFact = () => {
             
           }}
         >
-          <Leaf className={' scale-90'}/>
+          <Leaf2 className={' scale-90'}/>
         </motion.div>
 
         <motion.div 
