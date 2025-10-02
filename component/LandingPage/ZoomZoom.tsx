@@ -119,6 +119,7 @@ const ZoomZoom = () => {
           style={{
             y: useTransform(scrollYProgress, [0.45, 0.6], [0, 300]),
             opacity: useTransform(scrollYProgress, [0.45, 0.48], [1, 0]),
+            display: useTransform(scrollYProgress, [0.48, 0.488], ['block', 'hidden']),
           }}
           >
             <p> The software engineer you <span className='text-[#eca5c9]'>wish</span> you hired</p>
@@ -177,6 +178,7 @@ const ZoomZoom = () => {
           style={{
             y: useTransform(scrollYProgress, [0.61, 0.62], [0, -400]),
             opacity: useTransform(scrollYProgress, [0.62, 0.8], [0, 1]),
+            display: useTransform(scrollYProgress, [0.49, 0.499], ['hidden', 'block']),
 
           }}
           >
