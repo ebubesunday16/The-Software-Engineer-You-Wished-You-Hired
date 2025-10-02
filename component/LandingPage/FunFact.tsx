@@ -84,10 +84,10 @@ const FunFact = () => {
 
 
 
-        <div className='flex items-center gap-x-6'>
+        <div className='flex items-center gap-x-6 self-end'>
           <div>
-            <p className='text-base font-semibold'>Sun Tzu</p>
-            <p className='text-sm'>The Author of the  Art<br/> of War</p>
+            <p className='text-sm font-semibold'>Sun Tzu</p>
+            <p className='text-xs'>The Author of the  Art<br/> of War</p>
           </div>
           <Image 
             src={Images.Suntzu}
@@ -99,7 +99,8 @@ const FunFact = () => {
 
         <motion.div
         style={{
-          rotate: useTransform(scrollYProgress, [0.71, 0.72, 0.73, 0.74], [20, -5, 15, 0])
+          rotate: useTransform(scrollYProgress, [0.71, 0.72, 0.73, 0.74, 0.8, 0.81], [20, -5, 15, 0, 0, -5]),
+          opacity: useTransform(scrollYProgress, [0.65, 0.7], [0, 1]),
         }}
         
         >
