@@ -45,7 +45,7 @@ const FunFact = () => {
             
           }}
         >
-          <Leaf2 className={' scale-90'}/>
+          <Leaf className={' scale-90'}/>
         </motion.div>
 
         <motion.div 
@@ -104,7 +104,7 @@ const FunFact = () => {
         }}
         
         >
-          <Leaf className={'-rotate-60 scale-75'}/>
+          <Leaf className={'-rotate-60 '}/>
         </motion.div>
 
       </motion.div>
