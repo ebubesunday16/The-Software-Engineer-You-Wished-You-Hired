@@ -27,8 +27,8 @@ const FunFact = () => {
       <motion.div 
       className='h-screen bg-[#faeadc] rounded-t-[16px] sticky top-0 flex flex-col items-center space-y-16 justify-center  px-4'
       style={{
-        borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3], [72, 24, 16, 0]),
-        borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3], [72, 24, 16, 0]),
+        borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
+        borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
       }}
       >
         <motion.div
@@ -49,13 +49,13 @@ const FunFact = () => {
         </motion.div>
 
         <motion.div 
-        className='text-sm '
+        className='text-xs '
         style={{
           opacity: useTransform(scrollYProgress, [0.72, 0.75], [0, 1])
         }}
         
         >
-          <p className='font-semibold'>Here's a fun fact:</p>
+          <p className='font-bold'>Here's a fun fact:</p>
           <p>I close that gap</p>
         </motion.div>
 
