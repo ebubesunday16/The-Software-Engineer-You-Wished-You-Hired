@@ -25,7 +25,7 @@ const FunFact = () => {
     ref={pageRef}
     >
       <motion.div 
-      className='h-screen bg-[#FDF9F0] rounded-t-[16px] sticky top-0 flex flex-col items-center justify-center space-y-20 px-4'
+      className='h-screen bg-[#FDF9F0] rounded-t-[16px] sticky top-0 flex flex-col items-center space-y-16 justify-center  px-4'
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3], [72, 24, 16, 0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3], [72, 24, 16, 0]),
@@ -47,8 +47,9 @@ const FunFact = () => {
         >
           <Leaf className={' scale-90'}/>
         </motion.div>
+
         <motion.div 
-        className='text-sm'
+        className='text-sm '
         style={{
           opacity: useTransform(scrollYProgress, [0.72, 0.75], [0, 1])
         }}
@@ -59,31 +60,27 @@ const FunFact = () => {
         </motion.div>
 
         <div className="relative ">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Image
+              src={Images.Quote}
+              alt="background"
+              width={300}
+              height={300}
+              className=" max-w-none"
+            />
+          </div>
+          <motion.div
+            className="relative z-10 px-4"
+            style={{
+              opacity: useTransform(scrollYProgress, [0.58, 0.63], [0, 1]),
+            }}
+          >
+            <p className="text-center font-champBlack text-3xl">
+              The greatest gap is not between ignorance and knowledge, but between knowledge and action.
+            </p>
+          </motion.div>
 
-        {/* Background Quote */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Image
-            src={Images.Quote}
-            alt="background"
-            width={300}
-            height={300}
-            className=" max-w-none"
-          />
         </div>
-
-        {/* Foreground content */}
-        <motion.div
-          className="relative z-10 px-4"
-          style={{
-            opacity: useTransform(scrollYProgress, [0.58, 0.63], [0, 1]),
-          }}
-        >
-          <p className="text-center font-champBlack text-3xl">
-            The greatest gap is not between ignorance and knowledge, but between knowledge and action.
-          </p>
-        </motion.div>
-
-      </div>
 
 
 
