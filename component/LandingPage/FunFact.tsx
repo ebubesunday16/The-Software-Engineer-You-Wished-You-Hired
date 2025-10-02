@@ -29,6 +29,8 @@ const FunFact = () => {
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3], [72, 24, 16, 0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3], [72, 24, 16, 0]),
+        borderBottomLeftRadius: useTransform(scrollYProgress, [0.76, 0.8, 1], [0, 48, 72]),
+        borderBottomRightRadius: useTransform(scrollYProgress, [0.76, 0.8, 1], [0, 48, 72]),
       }}
       >
         <motion.div
@@ -38,14 +40,14 @@ const FunFact = () => {
             ease: 'backIn'
           }}
           style={{
-            y: useTransform(scrollYProgress, [0, 1], [-100, 400]),
+            y: useTransform(scrollYProgress, [0, 1], [0, 400]),
             x: useTransform(scrollYProgress, [0.20, 0.4 ], [0, 23]),
             rotate: useTransform(scrollYProgress, [0, 0.2, 0.5, 0.67], [0, -30, 50, 30]),
             opacity: useTransform(scrollYProgress, [0.55, 0.57], [1, 0]),
             
           }}
         >
-          <Leaf />
+          <Leaf className={' scale-90'}/>
         </motion.div>
         <motion.div 
         className='text-sm'
