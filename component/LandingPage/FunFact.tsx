@@ -91,8 +91,8 @@ const FunFact = () => {
           </div>
           <Image 
             src={Images.Suntzu}
-            width={69}
-            height={77}
+            width={48}
+            height={48}
             alt='suntzu'
           />
         </div>
