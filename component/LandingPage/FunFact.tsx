@@ -1,0 +1,118 @@
+'use client'
+import { Images } from '@/assets/png'
+import { Leaf } from '@/assets/svg'
+import { motion, useMotionValueEvent, useTransform } from 'motion/react'
+import { useScroll } from 'motion/react'
+import Image from 'next/image'
+import React, { useRef } from 'react'
+
+const FunFact = () => {
+
+  const pageRef = useRef(null)
+  const { scrollYProgress} = useScroll({
+    target: pageRef,
+    offset: ['start end', 'end end']
+  })
+
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    console.log('scrollYProgress for fun fact', latest)
+  })
+
+
+  return (
+    <motion.div 
+    className='h-[300vh] '
+    ref={pageRef}
+    >
+      <motion.div 
+      className='h-screen bg-[#FDF9F0] rounded-t-[16px] sticky top-0 flex flex-col items-center justify-center space-y-20 px-4'
+      style={{
+        borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3], [72, 24, 16, 0]),
+        borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3], [72, 24, 16, 0]),
+      }}
+      >
+        <motion.div
+        className=''
+          transition={{
+            type: 'spring',
+            ease: 'backIn'
+          }}
+          style={{
+            y: useTransform(scrollYProgress, [0, 1], [-100, 400]),
+            x: useTransform(scrollYProgress, [0.20, 0.4 ], [0, 23]),
+            rotate: useTransform(scrollYProgress, [0, 0.2, 0.5, 0.67], [0, -30, 50, 30]),
+            opacity: useTransform(scrollYProgress, [0.55, 0.57], [1, 0]),
+            
+          }}
+        >
+          <Leaf />
+        </motion.div>
+        <motion.div 
+        className='text-sm'
+        style={{
+          opacity: useTransform(scrollYProgress, [0.72, 0.75], [0, 1])
+        }}
+        
+        >
+          <p className='font-semibold'>Here's a fun fact:</p>
+          <p>I close that gap</p>
+        </motion.div>
+
+        <div className="relative border border-black">
+
+        {/* Background Quote */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Image
+            src={Images.Quote}
+            alt="background"
+            width={300}
+            height={300}
+            className=" max-w-none"
+          />
+        </div>
+
+        {/* Foreground content */}
+        <motion.div
+          className="relative z-10 px-4"
+          style={{
+            opacity: useTransform(scrollYProgress, [0.58, 0.63], [0, 1]),
+          }}
+        >
+          <p className="text-center font-champBlack text-3xl">
+            The greatest gap is not between ignorance and knowledge, but between knowledge and action.
+          </p>
+        </motion.div>
+
+      </div>
+
+
+
+        <div className='flex items-center gap-x-6'>
+          <div>
+            <p className='text-base font-semibold'>Sun Tzu</p>
+            <p className='text-sm'>The Author of the Art of War</p>
+          </div>
+          <Image 
+            src={Images.Suntzu}
+            width={69}
+            height={77}
+            alt='suntzu'
+          />
+        </div>
+
+        <motion.div
+        style={{
+          rotate: useTransform(scrollYProgress, [0.71, 0.72, 0.73, 0.74], [20, -5, 15, 0])
+        }}
+        
+        >
+          <Leaf className={'-rotate-60 scale-75'}/>
+        </motion.div>
+
+      </motion.div>
+
+    </motion.div>
+  )
+}
+
+export default FunFact

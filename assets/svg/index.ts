@@ -1,0 +1,6 @@
+export { default as Hashtag } from './Hashtag.svg'
+export { default as Speaker } from './Speaker.svg'
+export { default as Zoom } from './Zoom.svg'
+export { default as Hamburger } from './Hamburger.svg'
+export { default as LabelOne } from './LabelOne.svg'
+export { default as Leaf } from './Leaf.svg'
