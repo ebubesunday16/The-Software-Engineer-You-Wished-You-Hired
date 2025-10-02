@@ -38,7 +38,7 @@ const FunFact = () => {
             ease: 'backIn'
           }}
           style={{
-            y: useTransform(scrollYProgress, [0, 1], [0, 400]),
+            y: useTransform(scrollYProgress, [0, 1], [50, 400]),
             x: useTransform(scrollYProgress, [0.20, 0.4 ], [0, 23]),
             rotate: useTransform(scrollYProgress, [0, 0.2, 0.5, 0.67], [0, -30, 50, 30]),
             opacity: useTransform(scrollYProgress, [0.55, 0.57], [1, 0]),
