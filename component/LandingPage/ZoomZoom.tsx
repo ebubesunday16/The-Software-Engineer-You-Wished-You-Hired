@@ -176,7 +176,7 @@ const ZoomZoom = () => {
           <motion.div 
           className='self-center space-y-4 mt-auto border-white border'
           style={{
-            y: useTransform(scrollYProgress, [0.61, 0.62], [0, -400]),
+            y: useTransform(scrollYProgress, [0.61, 0.62], [0, -480]),
             opacity: useTransform(scrollYProgress, [0.62, 0.8], [0, 1]),
             display: useTransform(scrollYProgress, [0.49, 0.499], ['hidden', 'block']),
 
@@ -185,7 +185,7 @@ const ZoomZoom = () => {
             <p className='text-brand-white text-center'>ps: not the average dev</p>
 
             <button className='bg-[#f3c7de] rounded-[37px] self-center px-12 py-2'>
-              <span className='text-[#2E282A] font-semibold'>Let's build that idea together</span>
+              <span className='text-[#2E282A] font-bold'>Let's build that idea together</span>
             </button>
           </motion.div>
           
