@@ -29,8 +29,6 @@ const FunFact = () => {
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3], [72, 24, 16, 0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3], [72, 24, 16, 0]),
-        borderBottomLeftRadius: useTransform(scrollYProgress, [0.76, 0.8, 1], [0, 48, 72]),
-        borderBottomRightRadius: useTransform(scrollYProgress, [0.76, 0.8, 1], [0, 48, 72]),
       }}
       >
         <motion.div
@@ -60,7 +58,7 @@ const FunFact = () => {
           <p>I close that gap</p>
         </motion.div>
 
-        <div className="relative border border-black">
+        <div className="relative ">
 
         {/* Background Quote */}
         <div className="absolute inset-0 flex items-center justify-center">
@@ -92,7 +90,7 @@ const FunFact = () => {
         <div className='flex items-center gap-x-6'>
           <div>
             <p className='text-base font-semibold'>Sun Tzu</p>
-            <p className='text-sm'>The Author of the Art of War</p>
+            <p className='text-sm'>The Author of the  Art<br/> of War</p>
           </div>
           <Image 
             src={Images.Suntzu}
