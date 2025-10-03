@@ -10,7 +10,7 @@ const Introduction = () => {
   const pageRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: pageRef,
-    offset: ['start end', 'end start']
+    offset: ['start end', 'end end']
   })
 
   const isInView = useInView(pageRef, { once: true })
@@ -30,12 +30,16 @@ const Introduction = () => {
       className='bg-[#faeadc] h-[300vh]'
     >
       <motion.div 
-      
+      initial={{ scale: 0.9, opacity: 0 }}
+      animate={isInView ? { scale: 1, opacity: 1, height: "100vh" } : { scale: 0.9, opacity: 0.3 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className='h-screen sticky top-0 bg-brand-black rounded-t-[16px] flex flex-col items-start justify-center gap-y-12 px-4'
       style={{
-        borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.5, 0.6, 0.7], [72, 24, 24, 0]),
-        borderTopRightRadius: useTransform(scrollYProgress, [0, 0.5, 0.6, 0.7], [72, 24, 24,0]),
-        y: useTransform(scrollYProgress, [0, 0.1, 0.2], [0, -200, 0])
+        borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.067, 0.134, 0.2, 0.4], [72, 16, 16, 10.66,  0]),
+        borderTopRightRadius: useTransform(scrollYProgress, [0, 0.067, 0.134, 0.2, 0.4 ], [72, 16, 16, 10.66, 0]),
+        
+        
+        
       }}
       
       >
