@@ -49,14 +49,14 @@ const FunFact = () => {
         </motion.div>
 
         <motion.div 
-        className='text-xs '
+        className='text-xs flex flex-col items-center'
         style={{
           opacity: useTransform(scrollYProgress, [0.72, 0.75], [0, 1])
         }}
         
         >
           <p className='font-bold'>Here's a fun fact:</p>
-          <p>I close that gap. We do alot here</p>
+          <p>I close that gap. We "do" a lot of action here.</p>
         </motion.div>
 
         <div className="relative ">
