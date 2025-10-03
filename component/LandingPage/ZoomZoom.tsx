@@ -186,7 +186,7 @@ const ZoomZoom = () => {
             <button className='bg-[#f3c7de] rounded-[37px] self-center px-12 py-2'>
               <span className='text-[#2E282A] font-bold'>Let's build that idea together</span>
             </button>
-            <p className='text-brand-white text-center'>disclaimer: you may smile excessively</p>
+            <p className='text-brand-white text-center text-sm'>disclaimer: you may smile excessively</p>
           </motion.div>
           
       </motion.div>

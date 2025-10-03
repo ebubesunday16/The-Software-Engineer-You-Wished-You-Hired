@@ -56,7 +56,7 @@ const FunFact = () => {
         
         >
           <p className='font-bold'>Here's a fun fact:</p>
-          <p>I close that gap</p>
+          <p>I close that gap. We do alot here</p>
         </motion.div>
 
         <div className="relative ">
