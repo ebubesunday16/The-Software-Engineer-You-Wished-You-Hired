@@ -29,6 +29,7 @@ const FunFact = () => {
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
+        y: useTransform(scrollYProgress, [0, 0.2, 0.6], [0, -100, 0 ]),
       }}
       >
         <motion.div
