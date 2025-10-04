@@ -1,3 +1,4 @@
+import FeaturedProject from '@/component/LandingPage/FeaturedProject'
 import ReadingExperience from '@/component/LandingPage/FeaturedProject'
 import FunFact from '@/component/LandingPage/FunFact'
 import Introduction from '@/component/LandingPage/Introduction'
@@ -11,6 +12,7 @@ const Page = () => {
       <ZoomZoom />
       <FunFact />
       <Introduction />
+      <FeaturedProject />
       <Stack />
       {/* <ReadingExperience /> */}
     </div>
