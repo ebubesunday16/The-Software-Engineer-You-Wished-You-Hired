@@ -39,7 +39,7 @@ const FeaturedProject = () => {
         
         <div className='space-y-6'>
           <div
-            className='space-y-2'
+            className='space-y-8'
           >
             <p className='text-sm font-semibold'>Key Contributions:</p>
             <div>
@@ -47,7 +47,7 @@ const FeaturedProject = () => {
                 { 
                   Contributions.map((item, i) => {
                     return (
-                      <li className='flex items-start gap-2'>
+                      <li className='flex items-start gap-x-4'>
                         <div
                           className='rounded-full flex items-center justify-center text-sm bg-[#8BDFDD] text-brand-black min-w-6 min-h-6 w-6 h-6 '
                         >{i + 1}</div>
@@ -62,7 +62,7 @@ const FeaturedProject = () => {
           </div>
 
           <div
-            className='space-y-2'
+            className='space-y-8'
           >
             <p className='text-sm font-semibold'>Impact:</p>
             <div>
@@ -70,7 +70,7 @@ const FeaturedProject = () => {
                 { 
                   Impact.map((item, i) => {
                     return (
-                      <li className='flex items-start gap-2'>
+                      <li className='flex items-start gap-x-4'>
                         <div
                           className='rounded-full flex items-center justify-center text-sm bg-[#EDB88B] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
                         >{i + 1}</div>
