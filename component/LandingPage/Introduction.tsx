@@ -15,7 +15,7 @@ const Introduction = () => {
 
   const stickRef = useRef(null)
 
-  const isInView = useInView(stickRef, {  })
+  const isInView = useInView(stickRef, { once: true })
 
 
 
