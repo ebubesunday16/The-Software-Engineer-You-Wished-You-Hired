@@ -24,7 +24,7 @@ const FeaturedProject = () => {
 
   return (
     <div className='text-brand-white px-4 space-y-8'>
-      <div className='font-champBlack text-xl  '>
+      <div className='font-champBlack text-xl sticky top-0 py-5  bg-brand-black  '>
         Featured Project
       </div>  
       <Image 
@@ -47,7 +47,7 @@ const FeaturedProject = () => {
                     <div
                       className='rounded-full flex items-center justify-center text-sm bg-[#8BDFDD] text-brand-black min-w-6 min-h-6 w-6 h-6 '
                     >{i + 1}</div>
-                    <p className=''>{item}</p>
+                    <p className='text-sm'>{item}</p>
                   </li>
                 )
               })
@@ -66,7 +66,7 @@ const FeaturedProject = () => {
                     <div
                       className='rounded-full flex items-center justify-center text-sm bg-[#EDB88B] text-brand-black min-w-6 min-h-6 w-6 h-6 '
                     >{i + 1}</div>
-                    <p className=''>{item}</p>
+                    <p className='text-sm'>{item}</p>
                   </li>
                 )
               })
