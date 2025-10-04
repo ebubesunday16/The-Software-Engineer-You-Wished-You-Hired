@@ -1,7 +1,7 @@
 'use client'
 import { LabelDiamond, LabelOne } from '@/assets/svg'
 import React, { useRef } from 'react'
-import { motion, useInView, useMotionValueEvent, useScroll, useTransform } from 'motion/react'
+import { easeOut, motion, useInView, useMotionValueEvent, useScroll, useTransform } from 'motion/react'
 import Image from 'next/image'
 import { Images } from '@/assets/png'
 
@@ -15,7 +15,7 @@ const Introduction = () => {
 
   const stickRef = useRef(null)
 
-  const isInView = useInView(stickRef, { margin: '-120px 0px' })
+  const isInView = useInView(stickRef, )
 
 
 
@@ -27,6 +27,32 @@ const Introduction = () => {
     console.log('scrolly progress for introduction', latest)
   } )
 
+  
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.0001,
+        staggerChildren: 0.2,
+      }
+    }
+  }
+
+  const wordVariants = {
+    hidden: { 
+      color: '#313131', 
+      backgroundColor: '#313131', 
+      borderRadius: 24 
+    },
+    visible: { 
+      color: '#fdf9f0', 
+      backgroundColor: '#141414', 
+      borderRadius: 0,
+      transition: { duration: 0.4, ease: easeOut } 
+    },
+  }
+  
   
 
   return (
@@ -67,25 +93,15 @@ const Introduction = () => {
             <div className='space-y-4 text-brand-white text-xs'>
               <motion.p
               ref={stickRef}
+              variants={containerVariants}
+              initial='hidden'
+              animate={isInView ? 'visible' : 'hidden'}
 
               >{words.map((item, i) => {
                 return (
                   <motion.span
                   key={i}
-                  animate={isInView ? 
-                    { 
-                      backgroundColor: 'transparent',
-                      color: '#fdf9f0',
-                      borderRadius: 0,
-
-                    } : { 
-                      backgroundColor: '#313131',
-                      color: '#313131',
-                      borderRadius: 24,
-                     } }
-                  transition={ {
-                    delay: i * -0.5
-                  }}
+                  variants={wordVariants}
                   className='text-[#313131] bg-[#313131] rounded-3xl'
                   >
                     {item + ' '}
