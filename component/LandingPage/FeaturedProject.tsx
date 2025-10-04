@@ -1,6 +1,8 @@
+'use client'
 import { Images } from '@/assets/png'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'motion/react'
 
 const FeaturedProject = () => {
 
@@ -20,22 +22,56 @@ const FeaturedProject = () => {
     'Helped professionals focus more on patient care and less on repetitive documentation.'
   ]
 
+  const description =  `
+  Soapnotes.doctor is a web application built for healthcare professionals to simplify clinical documentation. It enables providers to record, upload, or write rough clinical notes, which are then transcribed and structured automatically into standardized SOAP formats.
+  `
+
+  const splitDescription = description.split(' ')
+
+
 
 
   return (
     <div className='text-brand-white px-4 space-y-8 pb-24'>
-      <div className='font-champBlack text-xl sticky top-0 py-5  bg-brand-black  '>
+      <div className='font-champBlack text-2xl sticky top-0 py-5  bg-brand-black  '>
         Featured Project
-      </div>  
-      <Image 
-        src={Images.Featured}
-        width={390}
-        height={250}
-        alt='featured image'
-      />
+      </div> 
+      <motion.div 
+        className=''
+        initial={{
+          scale: 0.8
+        }}
+        whileInView={{
+          scale: 1
+        }}
+        transition={{ 
+          duration: 0.8, 
+          ease: 'easeOut' 
+        }}
+        viewport={{
+          once: true
+        }}
+        >
+        <Image 
+          src={Images.Featured}
+          width={390}
+          height={250}
+          alt='featured image'
+          className='w-full'
+        />
+      </motion.div> 
       <div className='space-y-4'>
         <p className='font-champBlack text-lg '>SoapNote Doctor</p>
-        <p className='text-sm'>Soapnotes.doctor is a web application built for healthcare professionals to simplify clinical documentation. It enables providers to record, upload, or write rough clinical notes, which are then transcribed and structured automatically into standardized SOAP formats.</p>
+        <motion.p 
+        className='text-sm'
+        
+        >
+          {
+            splitDescription.map((item) => (
+              <span>{item + ' '}</span>
+            ))
+          }
+        </motion.p>
         
         <div className='space-y-6'>
           <div
@@ -47,9 +83,9 @@ const FeaturedProject = () => {
                 { 
                   Contributions.map((item, i) => {
                     return (
-                      <li className='flex items-start gap-x-4'>
+                      <li className='flex items-start gap-x-4 pl-4'>
                         <div
-                          className='rounded-full flex items-center justify-center text-sm bg-[#8BDFDD] text-brand-black min-w-6 min-h-6 w-6 h-6 '
+                          className='rounded-full flex items-center justify-center text-sm bg-[#8BDFDD] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
                         >{i + 1}</div>
                         <p className='text-sm'>{item}</p>
                       </li>
@@ -57,7 +93,6 @@ const FeaturedProject = () => {
                   })
                 }
               </ul>
-
             </div>
           </div>
 
@@ -70,7 +105,7 @@ const FeaturedProject = () => {
                 { 
                   Impact.map((item, i) => {
                     return (
-                      <li className='flex items-start gap-x-4'>
+                      <li className='flex items-start gap-x-4 pl-4'>
                         <div
                           className='rounded-full flex items-center justify-center text-sm bg-[#EDB88B] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
                         >{i + 1}</div>

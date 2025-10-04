@@ -25,7 +25,7 @@ const Stack = () => {
     ref={pageRef}
     >
       <motion.div 
-      className='min-h-screen  bg-[#faeadc] rounded-t-[16px] sticky top-0 flex flex-col justiy-center items-center space-y-12 py-6    px-4'
+      className='min-h-screen  bg-[#faeadc] rounded-t-[16px] sticky top-0 flex flex-col justify-center items-center space-y-12 py-6    px-4'
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
