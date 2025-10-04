@@ -13,15 +13,21 @@ const Introduction = () => {
     offset: ['start end', 'end end']
   })
 
-  const isInView = useInView(pageRef, { once: true })
+  const stickRef = useRef(null)
+
+  const isInView = useInView(stickRef, { margin: '-120px 0px' })
 
 
 
+  const paragraph = `I design and build websites and applications that are beautiful, structured, and secure by default.`
+
+  const words = paragraph.split(' ')
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     console.log('scrolly progress for introduction', latest)
   } )
 
+  
 
   return (
 
@@ -30,14 +36,11 @@ const Introduction = () => {
       className='bg-[#faeadc] h-[300vh]'
     >
       <motion.div 
-      
-      className='h-screen sticky top-0 bg-brand-black rounded-t-[16px] flex flex-col items-start justify-center gap-y-12 px-4'
+      className='min-h-screen sticky top-0 bg-brand-black rounded-t-[16px] flex flex-col items-start justify-center gap-y-12 px-4'
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.067, 0.134, 0.2, 0.4], [72, 16, 16, 10.66,  0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.067, 0.134, 0.2, 0.4 ], [72, 16, 16, 10.66, 0]),
         y: useTransform(scrollYProgress, [0, 0.134, 0.4], [0, -100, 0 ]),
-        
-        
         
       }}
       
@@ -62,8 +65,34 @@ const Introduction = () => {
             </div>
 
             <div className='space-y-4 text-brand-white text-sm'>
-              <p>I design and build websites and applications that are beautiful, structured, and secure by default.</p>
-              <p>With a BSc in Computer Science and over 3 years                   of hands-on experience, I bring structure, technical expertise and design sense to every project i work on. These are my manthras!</p>
+              <motion.p
+              ref={stickRef}
+
+              >{words.map((item, i) => {
+                return (
+                  <motion.span
+                  key={i}
+                  animate={isInView ? 
+                    { 
+                      backgroundColor: 'transparent',
+                      color: '#fdf9f0',
+                      borderRadius: 0,
+
+                    } : { 
+                      backgroundColor: '#313131',
+                      color: '#313131',
+                      borderRadius: 24,
+                     } }
+                  transition={ {
+                    delay: i * -0.5
+                  }}
+                  className='text-[#313131] bg-[#313131] rounded-3xl'
+                  >
+                    {item + ' '}
+                  </motion.span>
+                )
+              })}</motion.p>
+              <p>With a BSc in <span className='text-[#313131] bg-[#313131] inline-block rounded-3xl'>Computer</span> Science and over 3 years of hands-on experience, I bring structure, technical expertise and design sense to every project i work on. These are my manthras!</p>
             </div>
       </motion.div>
     </motion.div>

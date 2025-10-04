@@ -86,7 +86,7 @@ const FunFact = () => {
 
         <div className='flex items-center gap-x-6 self-end'>
           <div>
-            <p className='text-sm font-semibold'>Sun Tzu</p>
+            <p className='text-xs font-semibold'>Sun Tzu</p>
             <p className='text-xs'>The Author of the  Art<br/> of War</p>
           </div>
           <Image 
