@@ -105,7 +105,7 @@ const Stack = () => {
             alt='suntzu'
           />
         </div>
-        <div className='space-y-4'>
+        <div className='space-y-4 text-xs'>
             <p>I usually adapt my stack to the project’s needs, but I’ve worked the most with React and Next.js for web, PostgreSQL for databases, and React Native for mobile apps.</p>
             <p>You may also find me playing a lot with express js, python, C++ as the project demands.</p>
 
