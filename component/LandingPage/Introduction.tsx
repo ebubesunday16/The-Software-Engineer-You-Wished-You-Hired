@@ -64,7 +64,7 @@ const Introduction = () => {
               <span className='text-2xl font-champBlack text-brand-white'>I’m Emmanuel Sunday, <span className='bg-[#8BDFDD] text-brand-black px-2 rounded-[8px] '>Software</span> Engineer,  and CS Junior Student.</span>
             </div>
 
-            <div className='space-y-4 text-brand-white text-sm'>
+            <div className='space-y-4 text-brand-white text-xs'>
               <motion.p
               ref={stickRef}
 
