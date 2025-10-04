@@ -86,7 +86,7 @@ const Introduction = () => {
       >
           <div className='self-center flex gap-2 items-center'>
             <LabelOne />
-            <p className='rounded-[12px] border border-[#FBF0E6]text-branded-black font-semibold text-sm text-[#FBF0E6] py-2 px-2.5'>Introduction</p>
+            <p className='rounded-[12px] border border-[#FBF0E6] font-semibold text-sm text-[#FBF0E6] py-2 px-2.5'>Introduction</p>
 
           </div>
             <Image 
