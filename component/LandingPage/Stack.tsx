@@ -62,9 +62,18 @@ const Stack = () => {
         
         >
           <p className='font-bold'>Here's a fun fact:</p>
-          <p>We are skilled and know how to do</p>
+          <p>We are both skilled and use the sharpest weapon</p>
         </motion.div>
 
+          <div className='flex items-center gap-x-6 self-end'>
+          
+          <Image 
+            src={Images.Suntzu}
+            width={48}
+            height={48}
+            alt='suntzu'
+          />
+        </div>
         <div className="relative ">
           <div className="absolute inset-0 flex items-center justify-center">
             <Image
@@ -81,7 +90,7 @@ const Stack = () => {
               opacity: useTransform(scrollYProgress, [0.58, 0.63], [0, 1]),
             }}
           >
-            <p className=" font-champBlack text-2xl">
+            <p className=" font-champBlack text-3xl text-center">
             The sharpest weapon is nothing in the hands of the unskilled.
             </p>
             
@@ -91,18 +100,7 @@ const Stack = () => {
 
 
 
-        <div className='flex items-center gap-x-6 self-end'>
-          <div>
-            <p className='text-xs font-semibold'>Sun Tzu</p>
-            <p className='text-xs'>The Author of the  Art<br/> of War</p>
-          </div>
-          <Image 
-            src={Images.Suntzu}
-            width={48}
-            height={48}
-            alt='suntzu'
-          />
-        </div>
+        
         <div className='space-y-4 text-xs'>
             <p>I usually adapt my stack to the project’s needs, but I’ve worked the most with React and Next.js for web, PostgreSQL for databases, and React Native for mobile apps.</p>
             <p>You may also find me playing a lot with express js, python, C++ as the project demands.</p>
