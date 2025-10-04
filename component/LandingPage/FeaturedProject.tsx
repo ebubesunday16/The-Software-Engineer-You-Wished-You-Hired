@@ -23,7 +23,7 @@ const FeaturedProject = () => {
 
 
   return (
-    <div className='text-brand-white px-4 space-y-8'>
+    <div className='text-brand-white px-4 space-y-8 pb-24'>
       <div className='font-champBlack text-xl sticky top-0 py-5  bg-brand-black  '>
         Featured Project
       </div>  
@@ -36,44 +36,55 @@ const FeaturedProject = () => {
       <div className='space-y-4'>
         <p className='font-champBlack text-lg '>SoapNote Doctor</p>
         <p className='text-sm'>Soapnotes.doctor is a web application built for healthcare professionals to simplify clinical documentation. It enables providers to record, upload, or write rough clinical notes, which are then transcribed and structured automatically into standardized SOAP formats.</p>
-        <p className='text-sm'>Key Contributions:</p>
+        
+        <div className='space-y-6'>
+          <div
+            className='space-y-2'
+          >
+            <p className='text-sm font-semibold'>Key Contributions:</p>
+            <div>
+              <ul className='space-y-4'>
+                { 
+                  Contributions.map((item, i) => {
+                    return (
+                      <li className='flex items-start gap-2'>
+                        <div
+                          className='rounded-full flex items-center justify-center text-sm bg-[#8BDFDD] text-brand-black min-w-6 min-h-6 w-6 h-6 '
+                        >{i + 1}</div>
+                        <p className='text-sm'>{item}</p>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
 
-        <div>
-          <ul className='space-y-4'>
-            { 
-              Contributions.map((item, i) => {
-                return (
-                  <li className='flex items-start gap-2'>
-                    <div
-                      className='rounded-full flex items-center justify-center text-sm bg-[#8BDFDD] text-brand-black min-w-6 min-h-6 w-6 h-6 '
-                    >{i + 1}</div>
-                    <p className='text-sm'>{item}</p>
-                  </li>
-                )
-              })
-            }
-          </ul>
+            </div>
+          </div>
 
+          <div
+            className='space-y-2'
+          >
+            <p className='text-sm font-semibold'>Impact:</p>
+            <div>
+              <ul className='space-y-4'>
+                { 
+                  Impact.map((item, i) => {
+                    return (
+                      <li className='flex items-start gap-2'>
+                        <div
+                          className='rounded-full flex items-center justify-center text-sm bg-[#EDB88B] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
+                        >{i + 1}</div>
+                        <p className='text-sm'>{item}</p>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+
+            </div>
+          </div>
         </div>
 
-        <p className='text-sm'>Impact:</p>
-        <div>
-          <ul className='space-y-4'>
-            { 
-              Impact.map((item, i) => {
-                return (
-                  <li className='flex items-start gap-2'>
-                    <div
-                      className='rounded-full flex items-center justify-center text-sm bg-[#EDB88B] text-brand-black min-w-6 min-h-6 w-6 h-6 '
-                    >{i + 1}</div>
-                    <p className='text-sm'>{item}</p>
-                  </li>
-                )
-              })
-            }
-          </ul>
-
-        </div>
 
       </div>
 
