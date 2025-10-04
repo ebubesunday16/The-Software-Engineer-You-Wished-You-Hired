@@ -75,7 +75,7 @@ const ZoomZoom = () => {
             </motion.div>
 
             <motion.div 
-            className='bg-[#CD5334] flex items-center justify-center w-25 h-25 rounded-[16px] absolute translate-x-20 -translate-y-4 bottom-12 transform scale-160'
+            className='bg-[#E78EBC] flex items-center justify-center w-25 h-25 rounded-[16px] absolute translate-x-20 -translate-y-4 bottom-12 transform scale-160'
             variants={child}
             transition={{
               type: 'spring',

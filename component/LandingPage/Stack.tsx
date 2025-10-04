@@ -62,10 +62,10 @@ const Stack = () => {
         
         >
           <p className='font-bold'>Here's a fun fact:</p>
-          <p>We are both skilled and use the sharpest weapon</p>
+          <p>We are skilled and use the sharpest weapon</p>
         </motion.div>
 
-          <div className='flex items-center gap-x-6 self-end'>
+          <div className='flex items-center gap-x-6 self-center'>
           
           <Image 
             src={Images.Suntzu}
@@ -102,8 +102,8 @@ const Stack = () => {
 
         
         <div className='space-y-4 text-xs'>
-            <p>I usually adapt my stack to the project’s needs, but I’ve worked the most with React and Next.js for web, PostgreSQL for databases, and React Native for mobile apps.</p>
-            <p>You may also find me playing a lot with express js, python, C++ as the project demands.</p>
+            <p>I usually adapt my stack to the project’s needs, but I’ve worked the most with React, and Next.js for web, Nodejs for backend, PostgreSQL for databases, and React Native for mobile apps.</p>
+            <p>You may also find me playing around nest js, python, C++ as the project demands.</p>
 
         </div>
 
