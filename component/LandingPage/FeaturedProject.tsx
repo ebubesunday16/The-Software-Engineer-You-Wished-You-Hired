@@ -39,13 +39,13 @@ const FeaturedProject = () => {
       <motion.div 
         className=''
         initial={{
-          scale: 0.8
+          scale: 0.9
         }}
         whileInView={{
           scale: 1
         }}
         transition={{ 
-          duration: 0.8, 
+          duration: 0.4, 
           ease: 'easeOut' 
         }}
         viewport={{
