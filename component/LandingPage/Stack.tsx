@@ -25,7 +25,7 @@ const Stack = () => {
     ref={pageRef}
     >
       <motion.div 
-      className='h-screen bg-[#faeadc] rounded-t-[16px] sticky top-0 flex flex-col items-center space-y-16 justify-center  px-4'
+      className='min-h-screen bg-[#faeadc] rounded-t-[16px] sticky top-0 flex flex-col items-center space-y-12    px-4'
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
@@ -39,7 +39,7 @@ const Stack = () => {
             ease: 'backIn'
           }}
           style={{
-            y: useTransform(scrollYProgress, [0, 1], [50, 400]),
+            y: useTransform(scrollYProgress, [0, 1], [150, 400]),
             x: useTransform(scrollYProgress, [0.20, 0.4 ], [0, 23]),
             rotate: useTransform(scrollYProgress, [0, 0.2, 0.5, 0.67], [0, -30, 50, 30]),
             opacity: useTransform(scrollYProgress, [0.55, 0.57], [1, 0]),
@@ -76,7 +76,7 @@ const Stack = () => {
             />
           </div>
           <motion.div
-            className="relative z-10 px-4 border border-black w-full flex flex-col gap-y-6"
+            className="relative z-10 px-4 w-full text-xs flex flex-col gap-y-6"
             style={{
               opacity: useTransform(scrollYProgress, [0.58, 0.63], [0, 1]),
             }}
@@ -105,7 +105,7 @@ const Stack = () => {
             alt='suntzu'
           />
         </div>
-        <div className='gap-y-2'>
+        <div className='space-y-4'>
             <p>I usually adapt my stack to the project’s needs, but I’ve worked the most with React and Next.js for web, PostgreSQL for databases, and React Native for mobile apps.</p>
             <p>You may also find me playing a lot with express js, python, C++ as the project demands.</p>
 
