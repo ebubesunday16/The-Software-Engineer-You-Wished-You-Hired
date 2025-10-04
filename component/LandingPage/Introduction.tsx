@@ -38,6 +38,7 @@ const Introduction = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.01,
+        delayChildren: 0.3
       }
     }
   }
@@ -48,7 +49,7 @@ const Introduction = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.05,
-        delayChildren: 0.1 + (words.length * 0.06)
+        delayChildren: 0.4 + (words.length * 0.06)
       }
     }
   }
