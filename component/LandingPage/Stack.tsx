@@ -50,7 +50,7 @@ const Stack = () => {
         </motion.div>
         <div className='self-center flex gap-2 items-center'>
             <LabelTwo />
-            <p className='rounded-[12px] border border-brand-black font-semibold text-sm text-brand-black py-2 px-2.5'>Stack</p>
+            <p className='rounded-[12px] border border-brand-black font-semibold text-xs text-brand-black py-1.5 px-2.5'>Stack</p>
 
           </div>
 
@@ -81,12 +81,10 @@ const Stack = () => {
               opacity: useTransform(scrollYProgress, [0.58, 0.63], [0, 1]),
             }}
           >
-            <p className=" font-champBlack text-2xl max-w-[80%]">
+            <p className=" font-champBlack text-2xl">
             The sharpest weapon is nothing in the hands of the unskilled.
             </p>
-            <p className=' font-champBlack text-2xl self-end max-w-[80%]'>
-                He will win who knows how to handle both superior and inferior forces.
-            </p>
+            
           </motion.div>
 
         </div>
