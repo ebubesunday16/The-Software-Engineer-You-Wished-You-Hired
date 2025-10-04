@@ -3,6 +3,7 @@ import { Images } from '@/assets/png'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from 'motion/react'
+import { span } from 'motion/react-client'
 
 const FeaturedProject = () => {
 
@@ -29,7 +30,44 @@ const FeaturedProject = () => {
   const splitDescription = description.split(' ')
 
 
+  const containerVariants = {
+    hidden: {
+      opacity: 1
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.01,
+      }
+    }
+  }
 
+  const listicleVariants = {
+    hidden: {
+    },
+    visible: {
+      transition: {
+        staggerChildren: 0.01,
+        delayChildren:  (splitDescription.length * 0.01)
+      }
+    }
+  }
+
+  const wordVariants = { 
+    hidden: { 
+      color: '#313131', 
+      backgroundColor: '#313131', 
+      borderRadius: 24 
+    },
+    visible: { 
+      color: '#fdf9f0', 
+      backgroundColor: '#141414', 
+      borderRadius: 0,
+      viewport: {
+        once: true
+      }
+    },
+  }
 
   return (
     <div className='text-brand-white px-4 space-y-8 pb-24'>
@@ -61,14 +99,24 @@ const FeaturedProject = () => {
         />
       </motion.div> 
       <div className='space-y-4'>
-        <p className='font-champBlack text-lg '>SoapNote Doctor</p>
+        <p className='font-champBlack text-lg '>SoapNotes Doctor</p>
         <motion.p 
         className='text-sm'
+        variants={containerVariants}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{
+          once: true
+        }}
         
         >
           {
             splitDescription.map((item) => (
-              <span>{item + ' '}</span>
+              <motion.span 
+              variants={wordVariants}
+              >
+                {item + ' '}
+              </motion.span>
             ))
           }
         </motion.p>
@@ -79,20 +127,43 @@ const FeaturedProject = () => {
           >
             <p className='text-sm font-semibold'>Key Contributions:</p>
             <div>
-              <ul className='space-y-4'>
+              <motion.ul 
+              className='space-y-4'
+              variants={listicleVariants}
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true }}
+              
+              >
                 { 
-                  Contributions.map((item, i) => {
+                  Contributions.map((paragraph, paragraphIndex) => {
                     return (
-                      <li className='flex items-start gap-x-4 pl-4'>
+                      <motion.li 
+                        key={paragraphIndex}
+                        className='flex items-start gap-x-4 pl-4'
+                        viewport={{ once: true }}
+                      >
                         <div
                           className='rounded-full flex items-center justify-center text-sm bg-[#8BDFDD] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
-                        >{i + 1}</div>
-                        <p className='text-sm'>{item}</p>
-                      </li>
+                        >{paragraphIndex + 1}</div>
+
+                        <motion.p className='text-sm'>
+                          {paragraph.split(' ').map((word, wordIndex) => (
+                          <motion.span
+                          key={wordIndex}
+                            variants={wordVariants}
+                            viewport={{ once: true }}
+                          >
+                            {word + ' '}
+                          </motion.span>
+                          
+                        ))}
+                        </motion.p>
+                      </motion.li>
                     )
                   })
                 }
-              </ul>
+              </motion.ul>
             </div>
           </div>
 
@@ -101,20 +172,39 @@ const FeaturedProject = () => {
           >
             <p className='text-sm font-semibold'>Impact:</p>
             <div>
-              <ul className='space-y-4'>
+              <motion.ul 
+                className='space-y-4'
+                variants={listicleVariants}
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true }}
+              
+              >
                 { 
-                  Impact.map((item, i) => {
+                  Impact.map((paragraph, i) => {
                     return (
-                      <li className='flex items-start gap-x-4 pl-4'>
+                      <motion.li 
+                        className='flex items-start gap-x-4 pl-4'
+                        viewport={{ once: true }}
+                      
+                      >
                         <div
                           className='rounded-full flex items-center justify-center text-sm bg-[#EDB88B] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
                         >{i + 1}</div>
-                        <p className='text-sm'>{item}</p>
-                      </li>
+                        <motion.p className='text-sm'>{paragraph.split(' ').map((word) => (
+                          <motion.span
+                            variants={wordVariants}
+                          
+                          >
+                            {word + ' '}
+                          </motion.span>
+                          
+                        ))}</motion.p>
+                      </motion.li>
                     )
                   })
                 }
-              </ul>
+              </motion.ul>
 
             </div>
           </div>
