@@ -1,7 +1,7 @@
 'use client'
 import { LabelDiamond, LabelOne } from '@/assets/svg'
 import React, { useRef } from 'react'
-import { easeOut, motion, useInView, useMotionValueEvent, useScroll, useTransform } from 'motion/react'
+import { delay, easeOut, motion, useInView, useMotionValueEvent, useScroll, useTransform } from 'motion/react'
 import Image from 'next/image'
 import { Images } from '@/assets/png'
 
@@ -15,13 +15,17 @@ const Introduction = () => {
 
   const stickRef = useRef(null)
 
-  const isInView = useInView(stickRef, )
+  const isInView = useInView(stickRef, { once: true })
 
 
 
   const paragraph = `I design and build websites and applications that are beautiful, structured, and secure by default.`
 
+  const paragraph2 = `With a BSc in Computer Science and over 3 years of hands-on experience, I bring structure, technical expertise and design sense to every project i work on. These are my manthras!`
+
   const words = paragraph.split(' ')
+
+  const words2 = paragraph2.split(' ')
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     console.log('scrolly progress for introduction', latest)
@@ -33,8 +37,18 @@ const Introduction = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.0001,
-        staggerChildren: 0.2,
+        staggerChildren: 0.05,
+      }
+    }
+  }
+
+  const containerVariants2 = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delay: 0.78
       }
     }
   }
@@ -49,7 +63,6 @@ const Introduction = () => {
       color: '#fdf9f0', 
       backgroundColor: '#141414', 
       borderRadius: 0,
-      transition: { duration: 0.4, ease: easeOut } 
     },
   }
   
@@ -62,7 +75,7 @@ const Introduction = () => {
       className='bg-[#faeadc] h-[300vh]'
     >
       <motion.div 
-      className='min-h-screen sticky top-0 bg-brand-black rounded-t-[16px] flex flex-col items-start justify-center gap-y-12 pt-8 px-4'
+      className='min-h-screen sticky top-0 bg-brand-black rounded-t-[16px] flex flex-col items-start justify-center gap-y-12 py-6 px-4'
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.067, 0.134, 0.2, 0.4], [72, 16, 16, 10.66,  0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.067, 0.134, 0.2, 0.4 ], [72, 16, 16, 10.66, 0]),
@@ -90,7 +103,10 @@ const Introduction = () => {
               <span className='text-2xl font-champBlack text-brand-white'>I’m Emmanuel Sunday, <span className='bg-[#8BDFDD] text-brand-black px-2 rounded-[8px] '>Software</span> Engineer,  and CS Junior Student.</span>
             </div>
 
-            <div className='space-y-4 text-brand-white text-xs'>
+            <motion.div 
+            className='space-y-4 text-brand-white text-xs'
+            
+            >
               <motion.p
               ref={stickRef}
               variants={containerVariants}
@@ -108,8 +124,25 @@ const Introduction = () => {
                   </motion.span>
                 )
               })}</motion.p>
-              <p>With a BSc in <span className='text-[#313131] bg-[#313131] inline-block rounded-3xl'>Computer</span> Science and over 3 years of hands-on experience, I bring structure, technical expertise and design sense to every project i work on. These are my manthras!</p>
-            </div>
+
+              <motion.p
+              variants={containerVariants2}
+              initial='hidden'
+              animate={ isInView ? 'visible' : 'hidden'}
+              >
+              {words2.map((item, i) => {
+                return (
+                  <motion.span
+                  key={i}
+                  variants={wordVariants}
+                  className='text-[#313131] bg-[#313131] rounded-3xl'
+                  >
+                    {item + ' '}
+                  </motion.span>
+                )
+              })}
+              </motion.p>
+            </motion.div>
       </motion.div>
     </motion.div>
     
