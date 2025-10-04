@@ -15,7 +15,7 @@ const Introduction = () => {
 
   const stickRef = useRef(null)
 
-  const isInView = useInView(stickRef, { once: true })
+  const isInView = useInView(stickRef, {  })
 
 
 
@@ -47,8 +47,8 @@ const Introduction = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delay: 0.78
+        staggerChildren: 0.05,
+        delayChildren: 0.1 + (words.length * 0.06)
       }
     }
   }
