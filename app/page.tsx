@@ -14,10 +14,8 @@ const Page = () => {
       <FunFact />
       <Introduction />
       <FeaturedProject />
-      <div className='flex flex-col gap-4'>
         <Stack />
         <Finally />
-      </div>
       {/* <ReadingExperience /> */}
     </div>
   )

@@ -70,7 +70,7 @@ const FeaturedProject = () => {
   }
 
   return (
-    <div className='text-brand-white px-4 space-y-8 pb-24'>
+    <div className='text-brand-white px-4 space-y-8 pb-32'>
       <div className='font-champBlack text-2xl sticky top-0 py-5  bg-brand-black  '>
         Featured Project
       </div> 

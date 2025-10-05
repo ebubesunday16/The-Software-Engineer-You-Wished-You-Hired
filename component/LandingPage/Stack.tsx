@@ -21,7 +21,7 @@ const Stack = () => {
 
   return (
     <motion.div 
-    className='h-[300vh] '
+    className='h-[200vh] '
     ref={pageRef}
     >
       <motion.div 
@@ -43,7 +43,7 @@ const Stack = () => {
         <motion.div 
         className='text-xs flex flex-col items-center'
         style={{
-          opacity: useTransform(scrollYProgress, [0.2, 0.3], [0, 1])
+          opacity: useTransform(scrollYProgress, [0.3, 0.4], [0, 1])
         }}
         
         >
@@ -66,7 +66,7 @@ const Stack = () => {
           <motion.div
             className="relative z-10 px-4 w-full text-xs flex flex-col gap-y-6"
             style={{
-              opacity: useTransform(scrollYProgress, [0.2, 0.3], [0, 1]),
+              opacity: useTransform(scrollYProgress, [0.4, 0.5], [0, 1]),
             }}
           >
             <p className=" font-champBlack text-3xl text-center">
@@ -89,24 +89,7 @@ const Stack = () => {
           />
       </div> */}
 
-        <div className='relative'>
-          <motion.div
-          className='self-start translate-y-[28px] absolute'
-            transition={{
-              type: 'spring',
-              ease: 'backIn'
-            }}
-            style={{
-              y: useTransform(scrollYProgress, [0.3, 0.6], [0, 23]),
-              x: useTransform(scrollYProgress, [0.3, 0.6 ], [0, 300]),
-              rotate: useTransform(scrollYProgress, [0, 0.2, 0.5, 0.67], [0, -30, 50, 30]),
-              opacity: useTransform(scrollYProgress, [0.5, 0.67], [1, 0]),
-              
-              
-            }}
-          >
-            <Leaf className={' scale-90'}/>
-          </motion.div>
+        
 
         <motion.div 
         className='space-y-4 text-xs'
@@ -119,7 +102,6 @@ const Stack = () => {
             <p>You may also find me playing around nest js, python, C++ as the project demands.</p>
 
         </motion.div>
-        </div>
         
 
       </motion.div>
