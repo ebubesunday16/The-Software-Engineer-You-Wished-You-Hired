@@ -29,11 +29,7 @@ const Stack = () => {
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
-        scale: useTransform(scrollYProgress, [0.7, 1], [1, 0.6]),
-        x: useSpring(useTransform(scrollYProgress, [0.8, 1], [0, -400]), {
-          stiffness: 100,
-          damping: 20
-        })
+        
         
       }}
       >
