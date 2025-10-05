@@ -1,7 +1,7 @@
 'use client'
 import { LabelDiamond, LabelOne } from '@/assets/svg'
 import React, { useRef } from 'react'
-import { delay, easeOut, motion, useInView, useMotionValueEvent, useScroll, useTransform } from 'motion/react'
+import { delay, easeOut, motion, useInView, useMotionValueEvent, useScroll, useSpring, useTransform } from 'motion/react'
 import Image from 'next/image'
 import { Images } from '@/assets/png'
 
@@ -101,11 +101,19 @@ const Introduction = () => {
 
             <div className=''>
               <span><LabelDiamond className="inline-block mb-2 mr-1.5" /></span>
-              <span className='text-2xl font-champBlack text-brand-white'>I’m Emmanuel Sunday, <span className='bg-[#8BDFDD] text-brand-black px-2 rounded-[8px] '>Software</span> Engineer,  and CS Junior Student.</span>
+              <span className='text-2xl font-champBlack text-brand-white'>I’m Emmanuel Sunday, <motion.span 
+              style={{
+                scale: useSpring(useTransform(scrollYProgress, [0.5, 1], [0.8, 1]), {
+                  stiffness: 120,
+                  damping: 20,
+
+                })
+              }}
+              className='bg-[#8BDFDD] text-brand-black px-2 rounded-[8px] inline-block'>Software</motion.span> Engineer,  and CS Junior Student.</span>
             </div>
 
             <motion.div 
-            className='space-y-4 text-brand-white text-xs'
+            className='space-y-4 text-brand-white text-sm'
             
             >
               <motion.p

@@ -29,6 +29,7 @@ const FunFact = () => {
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
+        marginInline: useTransform(scrollYProgress, [0, 0.2], [24, 0]),
         
       }}
       >

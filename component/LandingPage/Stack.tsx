@@ -1,7 +1,7 @@
 'use client'
 import { Images } from '@/assets/png'
 import { LabelOne, LabelTwo, Leaf, Leaf2 } from '@/assets/svg'
-import { motion, useMotionValueEvent, useTransform } from 'motion/react'
+import { motion, useMotionValueEvent, useSpring, useTransform } from 'motion/react'
 import { useScroll } from 'motion/react'
 import Image from 'next/image'
 import React, { useRef } from 'react'
@@ -29,6 +29,11 @@ const Stack = () => {
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
+        scale: useTransform(scrollYProgress, [0.7, 1], [1, 0.6]),
+        x: useSpring(useTransform(scrollYProgress, [0.8, 1], [0, -400]), {
+          stiffness: 100,
+          damping: 20
+        })
         
       }}
       >
@@ -42,7 +47,7 @@ const Stack = () => {
         <motion.div 
         className='text-xs flex flex-col items-center'
         style={{
-          opacity: useTransform(scrollYProgress, [0.42, 0.45], [0, 1])
+          opacity: useTransform(scrollYProgress, [0.2, 0.3], [0, 1])
         }}
         
         >
@@ -51,15 +56,7 @@ const Stack = () => {
         </motion.div>
 
         <div className='flex flex-col gap-y-3'>
-          <div className='flex items-center gap-x-6 self-center'>
-          
-            <Image 
-              src={Images.Suntzu}
-              width={48}
-              height={48}
-              alt='suntzu'
-            />
-        </div>
+         
         <div className="relative ">
           <div className="absolute inset-0 flex items-center justify-center">
             <Image
@@ -86,30 +83,39 @@ const Stack = () => {
 
         </div>
 
+        {/* <div className='flex items-center gap-x-6 self-center'>
+          
+          <Image 
+            src={Images.Suntzu}
+            width={32}
+            height={32}
+            alt='suntzu'
+          />
+      </div> */}
 
+        <div className='relative'>
+          <motion.div
+          className='self-start translate-y-[28px] absolute'
+            transition={{
+              type: 'spring',
+              ease: 'backIn'
+            }}
+            style={{
+              y: useTransform(scrollYProgress, [0.3, 0.6], [0, 23]),
+              x: useTransform(scrollYProgress, [0.3, 0.6 ], [0, 300]),
+              rotate: useTransform(scrollYProgress, [0, 0.2, 0.5, 0.67], [0, -30, 50, 30]),
+              opacity: useTransform(scrollYProgress, [0.5, 0.67], [1, 0]),
+              
+              
+            }}
+          >
+            <Leaf className={' scale-90'}/>
+          </motion.div>
 
-        
-        
-        <motion.div
-        className='self-start translate-y-[28px]'
-          transition={{
-            type: 'spring',
-            ease: 'backIn'
-          }}
-          style={{
-            y: useTransform(scrollYProgress, [0.4, 0.6], [0, 23]),
-            x: useTransform(scrollYProgress, [0.4, 0.6 ], [0, 300]),
-            rotate: useTransform(scrollYProgress, [0, 0.2, 0.5, 0.67], [0, -30, 50, 30]),
-            
-            
-          }}
-        >
-          <Leaf className={' scale-90'}/>
-        </motion.div>
         <motion.div 
         className='space-y-4 text-xs'
         style={{
-          opacity: useTransform(scrollYProgress, [0.7, 0.72], [0, 1])
+          opacity: useTransform(scrollYProgress, [0.6, 0.72], [0, 1])
         }}
         
         >
@@ -117,6 +123,8 @@ const Stack = () => {
             <p>You may also find me playing around nest js, python, C++ as the project demands.</p>
 
         </motion.div>
+        </div>
+        
 
       </motion.div>
 

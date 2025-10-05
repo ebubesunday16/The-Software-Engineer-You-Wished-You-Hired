@@ -1,5 +1,6 @@
 import FeaturedProject from '@/component/LandingPage/FeaturedProject'
 import ReadingExperience from '@/component/LandingPage/FeaturedProject'
+import Finally from '@/component/LandingPage/Finally'
 import FunFact from '@/component/LandingPage/FunFact'
 import Introduction from '@/component/LandingPage/Introduction'
 import Stack from '@/component/LandingPage/Stack'
@@ -13,7 +14,10 @@ const Page = () => {
       <FunFact />
       <Introduction />
       <FeaturedProject />
-      <Stack />
+      <div className='flex flex-col gap-4'>
+        <Stack />
+        <Finally />
+      </div>
       {/* <ReadingExperience /> */}
     </div>
   )
