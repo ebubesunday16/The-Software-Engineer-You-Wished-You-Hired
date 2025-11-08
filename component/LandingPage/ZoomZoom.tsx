@@ -75,7 +75,7 @@ const ZoomZoom = () => {
             </motion.div>
 
             <motion.div 
-            className='bg-[#E78EBC] flex items-center justify-center w-25 h-25 rounded-[16px] absolute translate-x-20 -translate-y-4 bottom-12 transform scale-160'
+            className='bg-[#CD5334] flex items-center justify-center w-25 h-25 rounded-[16px] absolute translate-x-20 -translate-y-4 bottom-12 transform scale-160'
             variants={child}
             transition={{
               type: 'spring',
@@ -183,7 +183,7 @@ const ZoomZoom = () => {
           }}
           >
 
-            <button className='bg-[#faeadc] rounded-[37px] self-center px-12 py-2'>
+            <button className='bg-[#F3C7DE] rounded-[37px] self-center px-12 py-2'>
               <span className='text-[#2E282A] font-bold'>Let's build that idea together</span>
             </button>
             <p className='text-brand-white text-center text-sm'>disclaimer: you may smile excessively</p>
