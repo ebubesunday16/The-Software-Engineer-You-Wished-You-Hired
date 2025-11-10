@@ -11,7 +11,7 @@ const FunFact = () => {
   const pageRef = useRef(null)
   const { scrollYProgress} = useScroll({
     target: pageRef,
-    offset: ['start start', 'end end']
+    offset: ['start start', 'end start']
   })
 
   const expressiveSpatial = {
@@ -31,7 +31,7 @@ const FunFact = () => {
     ref={pageRef}
     >
       <motion.div 
-      className='h-screen bg-brand-black sticky top-0 flex flex-col items-center space-y-16 justify-center  px-4'
+      className='h-screen bg-brand-black sticky top-0 flex flex-col items-center space-y-20 justify-center  px-4'
       style={{
         // borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         // borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
@@ -47,10 +47,10 @@ const FunFact = () => {
             ease: 'backIn'
           }}
           style={{
-            y: useSpring(useTransform(scrollYProgress, [0, 0.3], [0, 400]), expressiveSpatial),
+            y: useSpring(useTransform(scrollYProgress, [0, 0.3], [1, 400]), expressiveSpatial),
             x: useSpring(useTransform(scrollYProgress, [0, 0.3 ], [0, 23]), expressiveSpatial),
             rotate: useTransform(scrollYProgress, [0, 0.2, 0.3,], [0, -180, -scrollYProgress]),
-            opacity: useSpring(useTransform(scrollYProgress, [0.29, 0.3], [1, 0]), expressiveSpatial),
+            opacity: useSpring(useTransform(scrollYProgress, [0.26, 0.28], [1, 0]), expressiveSpatial),
             
           }}
         >
@@ -58,7 +58,7 @@ const FunFact = () => {
         </motion.div>
 
         <motion.div 
-        className='text-xs flex flex-col items-center'
+        className='text-xs flex flex-col items-center '
         style={{
           // opacity: useTransform(scrollYProgress, [0.72, 0.75], [0, 1]),
           color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414'])
@@ -69,7 +69,7 @@ const FunFact = () => {
           <p>We build a lot here.</p>
         </motion.div>
 
-        <div className="relative ">
+        <div className="relative flex-1 ">
           <div className="absolute inset-0 flex items-center justify-center">
             <Image
               src={Images.Quote}
@@ -94,10 +94,10 @@ const FunFact = () => {
 
 
 
-        <div className='flex items-center gap-x-6 self-end'>
+        <div className='flex items-center gap-x-6 self-end pb-8'>
           <motion.div
             style={{
-              color: useTransform(scrollYProgress, [0, 0.11], ['#fdf9f0', '#141414'])
+              color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414'])
             }}
           >
             <p className='text-xs font-semibold'>Sun Tzu</p>
