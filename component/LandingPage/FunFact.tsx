@@ -40,7 +40,7 @@ const FunFact = () => {
         
       }}
       >
-        <motion.div
+        {/* <motion.div
         className=''
           transition={{
             type: 'spring',
@@ -55,7 +55,7 @@ const FunFact = () => {
           }}
         >
           <Leaf className={' scale-90'}/>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div 
         className='text-xs flex flex-col items-center '
