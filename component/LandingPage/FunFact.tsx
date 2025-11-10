@@ -70,7 +70,7 @@ const FunFact = () => {
         </motion.div>
 
         <div className="relative flex-1 ">
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 -top-8 flex items-center justify-center">
             <Image
               src={Images.Quote}
               alt="background"
@@ -82,7 +82,7 @@ const FunFact = () => {
           <motion.div
             className="relative z-10 px-4"
             style={{
-              opacity: useTransform(scrollYProgress, [0.31, 0.36], [0, 1]),
+              opacity: useTransform(scrollYProgress, [0.31, 0.34], [0, 1]),
             }}
           >
             <p className="text-center font-champBlack text-3xl">
