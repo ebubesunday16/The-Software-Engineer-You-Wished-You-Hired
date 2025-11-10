@@ -11,9 +11,9 @@ const Page = () => {
   return (
     <div>
       <ZoomZoom />
+      <FunFact />
       <Introduction />
       <FeaturedProject />
-      <FunFact />
         <Stack />
         <Finally />
       {/* <ReadingExperience /> */}
