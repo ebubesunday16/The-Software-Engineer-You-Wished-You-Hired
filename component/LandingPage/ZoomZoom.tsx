@@ -82,7 +82,7 @@ const ZoomZoom = () => {
             </motion.div>
 
             <motion.div 
-            className='bg-[#CD5334] flex items-center justify-center w-25 h-25 rounded-[16px] absolute translate-x-20 -translate-y-4 bottom-12 transform scale-160'
+            className='bg-[#ddd7c6] flex items-center justify-center w-25 h-25 rounded-[16px] absolute translate-x-20 -translate-y-4 bottom-12 transform scale-160'
             variants={child}
             
             style={{
@@ -125,7 +125,7 @@ const ZoomZoom = () => {
             display: useTransform(scrollYProgress, [0.4, 0.43], ['block', 'hidden']),
           }}
           >
-            <p> The software engineer you <span className='text-[#eca5c9]'>wish</span> you hired</p>
+            <p> The software engineer you <span className='text-[#E78EBC]'>wish</span> you hired</p>
           </motion.div>
 
           <motion.div 
