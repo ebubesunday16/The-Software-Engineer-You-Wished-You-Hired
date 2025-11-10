@@ -27,7 +27,7 @@ const FunFact = () => {
 
   return (
     <motion.div 
-    className='h-[300vh] '
+    className='h-[200vh] '
     ref={pageRef}
     >
       <motion.div 
@@ -50,7 +50,7 @@ const FunFact = () => {
             y: useSpring(useTransform(scrollYProgress, [0, 0.3], [0, 400]), expressiveSpatial),
             x: useSpring(useTransform(scrollYProgress, [0, 0.3 ], [0, 23]), expressiveSpatial),
             rotate: useTransform(scrollYProgress, [0, 0.2, 0.3,], [0, -180, -scrollYProgress]),
-            opacity: useSpring(useTransform(scrollYProgress, [0.331, 0.4], [1, 0]), expressiveSpatial),
+            opacity: useSpring(useTransform(scrollYProgress, [0.29, 0.3], [1, 0]), expressiveSpatial),
             
           }}
         >
@@ -82,7 +82,7 @@ const FunFact = () => {
           <motion.div
             className="relative z-10 px-4"
             style={{
-              opacity: useTransform(scrollYProgress, [0.58, 0.63], [0, 1]),
+              opacity: useTransform(scrollYProgress, [0.31, 0.36], [0, 1]),
             }}
           >
             <p className="text-center font-champBlack text-3xl">
@@ -111,15 +111,6 @@ const FunFact = () => {
           />
         </div>
 
-        <motion.div
-        style={{
-          rotate: useTransform(scrollYProgress, [0.71, 0.72, 0.73, 0.74, 0.8, 0.81], [20, -5, 15, 0, 0, -5]),
-          opacity: useTransform(scrollYProgress, [0.65, 0.7], [0, 1]),
-        }}
-        
-        >
-          <Leaf className={'-rotate-60 '}/>
-        </motion.div>
 
       </motion.div>
 
