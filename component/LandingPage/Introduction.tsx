@@ -79,7 +79,7 @@ const Introduction = () => {
 
     <motion.div
       ref={pageRef}
-      className='bg-[#faeadc] h-[200vh]'
+      className='bg-[#979495] h-[200vh]'
     >
       <motion.div 
       className='min-h-screen sticky top-0 bg-brand-black flex flex-col items-start justify-center gap-y-12 py-16 px-4'
