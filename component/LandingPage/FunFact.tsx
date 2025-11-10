@@ -1,7 +1,7 @@
 'use client'
 import { Images } from '@/assets/png'
 import { Leaf, Leaf2 } from '@/assets/svg'
-import { motion, useMotionValueEvent, useTransform } from 'motion/react'
+import { motion, useMotionValueEvent, useSpring, useTransform } from 'motion/react'
 import { useScroll } from 'motion/react'
 import Image from 'next/image'
 import React, { useRef } from 'react'
@@ -11,8 +11,19 @@ const FunFact = () => {
   const pageRef = useRef(null)
   const { scrollYProgress} = useScroll({
     target: pageRef,
-    offset: ['start end', 'end end']
+    offset: ['start start', 'end end']
   })
+
+  const { scrollYProgress: backgroundColorProgress} = useScroll({
+    target: pageRef,
+    offset: ['start start', 'end end']
+  })
+
+  const expressiveSpatial = {
+    stiffness: 170,  
+    damping: 25,    
+    mass: 0.8,  
+  };
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     console.log('scrollYProgress for fun fact', latest)
@@ -25,10 +36,11 @@ const FunFact = () => {
     ref={pageRef}
     >
       <motion.div 
-      className='h-screen bg-[#faeadc] rounded-t-[16px] sticky top-0 flex flex-col items-center space-y-16 justify-center  px-4'
+      className='h-screen bg-brand-black sticky top-0 flex flex-col items-center space-y-16 justify-center  px-4'
       style={{
-        borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
-        borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
+        // borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
+        // borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
+        background: useTransform(backgroundColorProgress, [0, 0.1111], ['#141414', '#faeadc'])
         
         
       }}
@@ -40,10 +52,10 @@ const FunFact = () => {
             ease: 'backIn'
           }}
           style={{
-            y: useTransform(scrollYProgress, [0, 1], [50, 400]),
-            x: useTransform(scrollYProgress, [0.20, 0.4 ], [0, 23]),
-            rotate: useTransform(scrollYProgress, [0, 0.2, 0.5, 0.67], [0, -30, 50, 30]),
-            opacity: useTransform(scrollYProgress, [0.55, 0.57], [1, 0]),
+            y: useSpring(useTransform(backgroundColorProgress, [0, 0.3], [0, 300]), expressiveSpatial),
+            x: useSpring(useTransform(backgroundColorProgress, [0, 0.3 ], [0, 23]), expressiveSpatial),
+            rotate: useTransform(backgroundColorProgress, [0, 0.2, 0.3,], [0, -180, -backgroundColorProgress]),
+            opacity: useSpring(useTransform(backgroundColorProgress, [0.331, 0.4], [1, 0]), expressiveSpatial),
             
           }}
         >
@@ -53,12 +65,13 @@ const FunFact = () => {
         <motion.div 
         className='text-xs flex flex-col items-center'
         style={{
-          opacity: useTransform(scrollYProgress, [0.72, 0.75], [0, 1])
+          // opacity: useTransform(scrollYProgress, [0.72, 0.75], [0, 1]),
+          color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414'])
         }}
         
         >
           <p className='font-bold'>Here's a fun fact:</p>
-          <p>I close that gap. We "do" a lot of action here.</p>
+          <p>We build a lot here.</p>
         </motion.div>
 
         <div className="relative ">
@@ -78,7 +91,7 @@ const FunFact = () => {
             }}
           >
             <p className="text-center font-champBlack text-3xl">
-              The greatest gap is not between ignorance and knowledge, but between knowledge and action.
+            Code changes nothing until it runs; ideas changes nothing until it’s built.
             </p>
           </motion.div>
 
@@ -87,10 +100,14 @@ const FunFact = () => {
 
 
         <div className='flex items-center gap-x-6 self-end'>
-          <div>
+          <motion.div
+            style={{
+              color: useTransform(backgroundColorProgress, [0, 0.11], ['#fdf9f0', '#141414'])
+            }}
+          >
             <p className='text-xs font-semibold'>Sun Tzu</p>
             <p className='text-xs'>The Author of the  Art<br/> of War</p>
-          </div>
+          </motion.div>
           <Image 
             src={Images.Suntzu}
             width={48}
