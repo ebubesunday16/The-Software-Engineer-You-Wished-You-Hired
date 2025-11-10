@@ -32,11 +32,11 @@ const FunFact = () => {
 
   return (
     <motion.div 
-    className='h-[300vh] '
+    className='h-[300dvh] '
     ref={pageRef}
     >
       <motion.div 
-      className='h-screen bg-brand-black sticky top-0 flex flex-col items-center space-y-16 justify-center  px-4'
+      className='h-dvh bg-brand-black sticky top-0 flex flex-col items-center space-y-16 justify-center  px-4'
       style={{
         // borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         // borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
@@ -52,7 +52,7 @@ const FunFact = () => {
             ease: 'backIn'
           }}
           style={{
-            y: useSpring(useTransform(backgroundColorProgress, [0, 0.3], [0, 300]), expressiveSpatial),
+            y: useSpring(useTransform(backgroundColorProgress, [0, 0.3], [0, 400]), expressiveSpatial),
             x: useSpring(useTransform(backgroundColorProgress, [0, 0.3 ], [0, 23]), expressiveSpatial),
             rotate: useTransform(backgroundColorProgress, [0, 0.2, 0.3,], [0, -180, -backgroundColorProgress]),
             opacity: useSpring(useTransform(backgroundColorProgress, [0.331, 0.4], [1, 0]), expressiveSpatial),
