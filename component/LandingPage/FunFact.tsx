@@ -27,11 +27,11 @@ const FunFact = () => {
 
   return (
     <motion.div 
-    className='h-[300dvh] '
+    className='h-[300vh] '
     ref={pageRef}
     >
       <motion.div 
-      className='h-dvh bg-brand-black sticky top-0 flex flex-col items-center space-y-16 justify-center  px-4'
+      className='h-screen bg-brand-black sticky top-0 flex flex-col items-center space-y-16 justify-center  px-4'
       style={{
         // borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         // borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),

@@ -42,11 +42,11 @@ const ZoomZoom = () => {
 
   return (
     <motion.div 
-    className='h-[300dvh] pb-8' 
+    className='h-[300vh] pb-8' 
     ref={pageRef}>
 
       <motion.div 
-      className='sticky top-0 flex flex-col space-y-18 h-dvh py-6 px-4'
+      className='sticky top-0 flex flex-col space-y-18 h-screen py-6 px-4'
       >
           <Header className=""/>
         
