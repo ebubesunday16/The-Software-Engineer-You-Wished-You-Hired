@@ -14,11 +14,6 @@ const FunFact = () => {
     offset: ['start start', 'end end']
   })
 
-  const { scrollYProgress: backgroundColorProgress} = useScroll({
-    target: pageRef,
-    offset: ['start start', 'end end']
-  })
-
   const expressiveSpatial = {
     stiffness: 170,  
     damping: 25,    
@@ -40,7 +35,7 @@ const FunFact = () => {
       style={{
         // borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         // borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
-        background: useTransform(backgroundColorProgress, [0, 0.1111], ['#141414', '#faeadc'])
+        background: useTransform(scrollYProgress, [0, 0.1111], ['#141414', '#faeadc'])
         
         
       }}
@@ -52,10 +47,10 @@ const FunFact = () => {
             ease: 'backIn'
           }}
           style={{
-            y: useSpring(useTransform(backgroundColorProgress, [0, 0.3], [0, 400]), expressiveSpatial),
-            x: useSpring(useTransform(backgroundColorProgress, [0, 0.3 ], [0, 23]), expressiveSpatial),
-            rotate: useTransform(backgroundColorProgress, [0, 0.2, 0.3,], [0, -180, -backgroundColorProgress]),
-            opacity: useSpring(useTransform(backgroundColorProgress, [0.331, 0.4], [1, 0]), expressiveSpatial),
+            y: useSpring(useTransform(scrollYProgress, [0, 0.3], [0, 400]), expressiveSpatial),
+            x: useSpring(useTransform(scrollYProgress, [0, 0.3 ], [0, 23]), expressiveSpatial),
+            rotate: useTransform(scrollYProgress, [0, 0.2, 0.3,], [0, -180, -scrollYProgress]),
+            opacity: useSpring(useTransform(scrollYProgress, [0.331, 0.4], [1, 0]), expressiveSpatial),
             
           }}
         >
@@ -102,7 +97,7 @@ const FunFact = () => {
         <div className='flex items-center gap-x-6 self-end'>
           <motion.div
             style={{
-              color: useTransform(backgroundColorProgress, [0, 0.11], ['#fdf9f0', '#141414'])
+              color: useTransform(scrollYProgress, [0, 0.11], ['#fdf9f0', '#141414'])
             }}
           >
             <p className='text-xs font-semibold'>Sun Tzu</p>
