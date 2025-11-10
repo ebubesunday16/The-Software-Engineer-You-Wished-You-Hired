@@ -86,7 +86,7 @@ const Introduction = () => {
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.067, 0.134, 0.2, 0.4], [72, 16, 16, 10.66,  0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.067, 0.134, 0.2, 0.4 ], [72, 16, 16, 10.66, 0]),
-        y: useSpring(useTransform(scrollYProgress, [0, 0.134, 0.2, 0.4], [0, -100, -100, 0 ]), expressiveSpatial),
+        // y: useSpring(useTransform(scrollYProgress, [0, 0.134, 0.2, 0.4], [0, -100, -100, 0 ]), expressiveSpatial),
      
         
       }}
