@@ -31,7 +31,7 @@ const FunFact = () => {
     ref={pageRef}
     >
       <motion.div 
-      className='h-screen bg-[#ddd7c6] sticky top-0 flex flex-col items-center space-y-20 justify-center py-24 px-4'
+      className='h-screen bg-[#EDB88B] sticky top-0 flex flex-col items-center space-y-20 justify-center py-24 px-4'
       style={{
         // borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         // borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
