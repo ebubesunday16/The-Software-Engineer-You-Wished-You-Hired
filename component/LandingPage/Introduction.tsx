@@ -21,7 +21,7 @@ const Introduction = () => {
   // 🌀 Scroll-based toggle between Frontend and Backend
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     if (latest < 0.4) setSoftwareText('Software')
-    else if (latest < 0.7 )setSoftwareText('Frontend') 
+    else if (latest < 0.7) setSoftwareText('Frontend') 
     else if (latest < 0.9) setSoftwareText('Backend')
     else setSoftwareText('Software')
   console.log('introduction', latest)
