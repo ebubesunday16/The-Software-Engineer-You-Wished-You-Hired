@@ -35,7 +35,7 @@ const FunFact = () => {
       style={{
         // borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         // borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
-        // background: useTransform(scrollYProgress, [0, 0.1111], ['#141414', '#faeadc'])
+        background: useTransform(scrollYProgress, [0, 0.1111, 0.8, 0.9], ['#141414', '#faeadc', '#faeadc', '#141414'])
         
         
       }}
@@ -61,7 +61,7 @@ const FunFact = () => {
         className='text-xs flex flex-col items-center '
         style={{
           // opacity: useTransform(scrollYProgress, [0.72, 0.75], [0, 1]),
-          // color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414'])
+          color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414'])
         }}
         
         >
