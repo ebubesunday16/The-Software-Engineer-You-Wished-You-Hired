@@ -100,9 +100,7 @@ const FeaturedProject = () => {
 
   return (
     <div className='text-brand-white px-4 space-y-8 pb-32'>
-      <div className='sticky top-0 py-4 bg-brand-black'>
-
-      <div className='font-champBlack text-2xl  py-5 bg-brand-black'>
+      <div className='font-champBlack text-2xl sticky top-0 py-5 bg-brand-black'>
         Featured Project
       </div>
 
@@ -162,7 +160,6 @@ const FeaturedProject = () => {
             ))}
           </div>
         </motion.div>
-      </div>
       </div>
 
       <div className='space-y-4'>
