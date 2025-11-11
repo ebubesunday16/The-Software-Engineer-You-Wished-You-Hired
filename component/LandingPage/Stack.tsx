@@ -11,7 +11,7 @@ const Stack = () => {
   const pageRef = useRef(null)
   const { scrollYProgress} = useScroll({
     target: pageRef,
-    offset: ['start end', 'end end']
+    offset: ['start end', 'end start']
   })
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
@@ -29,6 +29,7 @@ const Stack = () => {
       style={{
         borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6], [72, 24, 24, 16,  0]),
         borderTopRightRadius: useTransform(scrollYProgress, [0, 0.1, 0.2, 0.3, 0.6 ], [72, 24, 24, 16, 0]),
+        background: useTransform(scrollYProgress, [0.8, 0.95], ['#faeadc', '#141414'])
         
         
       }}
