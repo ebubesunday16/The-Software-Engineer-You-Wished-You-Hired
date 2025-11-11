@@ -22,7 +22,8 @@ const Introduction = () => {
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     if (latest < 0.4) setSoftwareText('Software')
     else if (latest < 0.7 )setSoftwareText('Frontend') 
-    else setSoftwareText('Backend')
+    else if (latest < 0.85) setSoftwareText('Backend')
+    else setSoftwareText('Software')
   console.log('introduction', latest)
   })
 
@@ -118,7 +119,7 @@ const Introduction = () => {
             {/* 🔥 Dynamic Frontend / Backend span */}
             <motion.span 
               layout
-              className='bg-[#8BDFDD] text-brand-black px-2 rounded-[8px] inline-block relative'
+              className={`${softwareText === 'Software' ?  'bg-[#8BDFDD]' : softwareText === 'Frontend' ? 'bg-[#E78EBC]' : 'bg-[#EDB88B]'} text-brand-black px-2 rounded-[8px] inline-block relative`}
             >
               <AnimatePresence mode='wait'>
                 <motion.span
