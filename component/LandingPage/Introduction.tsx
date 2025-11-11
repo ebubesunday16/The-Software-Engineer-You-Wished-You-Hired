@@ -22,7 +22,8 @@ const Introduction = () => {
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     if (latest < 0.4) setSoftwareText('Software')
     else if (latest < 0.7 )setSoftwareText('Frontend') 
-    else setSoftwareText('Backend')
+    else if (latest < 0.9) setSoftwareText('Backend')
+    else setSoftwareText('Software')
   console.log('introduction', latest)
   })
 
