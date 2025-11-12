@@ -11,6 +11,7 @@ import SecondFeatured2 from './second-featured-2.png'
 import SecondFeatured3 from './second-featured-3.png'
 import SecondFeatured4 from './second-featured-4.png'
 import SecondFeatured5 from './second-featured-5.png'
+import FinalMe from './FinalMe.png'
 import Zoom from './zoomzoom.png'
 
 
@@ -28,6 +29,7 @@ export const Images = {
     SecondFeatured3,
     SecondFeatured4,
     SecondFeatured5,
-    Zoom
+    Zoom,
+    FinalMe,
 }
 
