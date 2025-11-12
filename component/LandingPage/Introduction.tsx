@@ -15,6 +15,7 @@ const Introduction = () => {
 
   const stickRef = useRef(null)
   const isInView = useInView(stickRef, {  })
+  const PageView = useInView(pageRef, {  })
 
   const [softwareText, setSoftwareText] = useState('Frontend')
 
@@ -82,16 +83,16 @@ const Introduction = () => {
         <div className='self-center justify-center  flex gap-2 items-center overflow-hidden'>
           <motion.div
             initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1, x: 0, scale: [0.95, 1.05, 1]  } : { opacity: 0}}
-            transition={{ duration: 0.1, ease: 'easeOut' }}
+            animate={PageView ? { opacity: 1, x: 0, scale: [0.95, 1.05, 1]  } : { opacity: 0}}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
           >
             <LabelOne />
           </motion.div>
 
           <motion.p
             initial={{ width: 0, opacity: 0 }}
-            animate={isInView ? { width: 'auto', opacity: 1, scale: [0.95, 1.05, 1]  } : { width: 0, opacity: 0 }}
-            transition={{ duration: 0.2, delay: 0.3, ease: 'easeOut' }}
+            animate={PageView ? { width: 'auto', opacity: 1, scale: [0.95, 1.05, 1]  } : { width: 0, opacity: 0 }}
+            transition={{ duration: 0.4, delay: 0.3, ease: 'easeOut' }}
             className='rounded-[12px] border border-[#FBF0E6] font-semibold text-xs text-[#FBF0E6] py-1.5 px-2.5 whitespace-nowrap overflow-hidden'
           >
             Introduction
