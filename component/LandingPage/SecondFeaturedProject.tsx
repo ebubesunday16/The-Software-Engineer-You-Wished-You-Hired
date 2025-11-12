@@ -120,7 +120,7 @@ const SecondFeaturedProject = () => {
             // borderTopRightRadius: useTransform(scrollYProgress, [0, 0.45], [32, 0]),
             // borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.45], [32, 0]),
         }}
-        className='bg-brand-black text-brand-white px-4 py-16 space-y-8 pb-32 '>
+        className='bg-brand-black text-brand-white px-4 space-y-8  '>
         <div className='font-champBlack text-2xl sticky top-0 py-5 bg-brand-black z-50'>
             IDeliver
         </div>
@@ -265,7 +265,7 @@ const SecondFeaturedProject = () => {
                             viewport={{ once: true }}
                         >
                             <div
-                            className='rounded-full flex items-center justify-center text-sm bg-[#E78EBC] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
+                            className='rounded-full flex items-center justify-center text-sm bg-[#EDB88B] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
                             >{i + 1}</div>
                             <motion.p className='text-sm'>{paragraph.split(' ').map((word, wordIndex) => (
                             <motion.span
