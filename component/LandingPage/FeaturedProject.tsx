@@ -99,7 +99,11 @@ const FeaturedProject = () => {
   }
 
   return (
-    <div className='text-brand-white px-4 space-y-8 pb-32'>
+    <div 
+    
+      className='text-brand-white px-4 space-y-8 pb-32'
+      id='featured'
+      >
       <div className='font-champBlack text-2xl sticky top-0 py-5 bg-brand-black z-50'>
         SOAPNotes Doctor
       </div>

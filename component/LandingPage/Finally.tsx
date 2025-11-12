@@ -21,6 +21,7 @@ const Finally = () => {
 
       <motion.div
         ref={pageRef}
+        id='finally'
         className='px-4 h-screen flex flex-col justify-between py-24 bg-brand-black '
         style={{
             borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.067, 0.134, 0.2, 0.4], [72, 16, 16, 10.66,  0]),

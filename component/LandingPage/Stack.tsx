@@ -27,6 +27,7 @@ const Stack = () => {
     >
       <motion.div 
         className='h-screen sticky top-0 flex flex-col justify-between items-center space-y-12 py-12 px-4 mt-24'
+        id='stack'
         style={{
           background: useTransform(scrollYProgress, [0, 0.1111, 0.8, 0.9], ['#141414', '#faeadc', '#faeadc', '#141414'])
         }}

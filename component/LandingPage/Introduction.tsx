@@ -79,6 +79,7 @@ const Introduction = () => {
     >
       <motion.div 
         className='min-h-screen sticky top-0 bg-brand-black flex flex-col items-start justify-center gap-y-12 py-24 px-4'
+        id='introduction'
       >
         <div className='self-center justify-center  flex gap-2 items-center overflow-hidden'>
           <motion.div
