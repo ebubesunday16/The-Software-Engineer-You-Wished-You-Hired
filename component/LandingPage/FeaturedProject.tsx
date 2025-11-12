@@ -100,8 +100,8 @@ const FeaturedProject = () => {
 
   return (
     <div className='text-brand-white px-4 space-y-8 pb-32'>
-      <div className='font-champBlack text-2xl sticky top-0 py-5 bg-brand-black'>
-        Featured Project
+      <div className='font-champBlack text-2xl sticky top-0 py-5 bg-brand-black z-50'>
+        SOAPNotes Doctor
       </div>
 
       {/* Apple-style image carousel */}
@@ -163,7 +163,7 @@ const FeaturedProject = () => {
       </div>
 
       <div className='space-y-4'>
-        <p className='font-champBlack text-lg'>SoapNotes Doctor</p>
+        <p className='font-champBlack text-lg'>AI-powered clinical documentation platform for healthcare professionals</p>
         <motion.p
           className='text-sm'
           variants={containerVariants}

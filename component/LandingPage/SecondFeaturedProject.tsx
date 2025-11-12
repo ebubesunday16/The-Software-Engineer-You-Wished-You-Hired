@@ -117,12 +117,12 @@ const SecondFeaturedProject = () => {
         <motion.div 
         ref={sectionRef}
         style={{
-            borderTopRightRadius: useTransform(scrollYProgress, [0, 0.45], [32, 0]),
-            borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.45], [32, 0]),
+            // borderTopRightRadius: useTransform(scrollYProgress, [0, 0.45], [32, 0]),
+            // borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.45], [32, 0]),
         }}
         className='bg-brand-black text-brand-white px-4 py-16 space-y-8 pb-32 '>
-        <div className='font-champBlack text-2xl sticky top-0 py-5 bg-brand-black'>
-            Featured Project
+        <div className='font-champBlack text-2xl sticky top-0 py-5 bg-brand-black z-50'>
+            IDeliver
         </div>
 
         {/* Apple-style image carousel */}
@@ -184,7 +184,7 @@ const SecondFeaturedProject = () => {
         </div>
 
         <div className='space-y-4'>
-            <p className='font-champBlack text-lg'>IDeliver</p>
+            <p className='font-champBlack text-lg'>Pharmacy delivery and telehealth mobile app</p>
             <motion.p
             className='text-sm'
             variants={containerVariants}

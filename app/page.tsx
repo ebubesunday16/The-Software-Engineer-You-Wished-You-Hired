@@ -15,8 +15,8 @@ const Page = () => {
       <FunFact />
       <Introduction />
       <FeaturedProject />
-      <Stack />
       <SecondFeaturedProject />
+      <Stack />
       <Finally />
       {/* <ReadingExperience /> */}
     </div>

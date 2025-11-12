@@ -13,7 +13,7 @@ const Finally = () => {
   return (
     <motion.div
       ref={pageRef}
-      className='px-4 h-screen flex flex-col justify-between'
+      className='px-4 h-screen flex flex-col justify-between py-24'
     >
       <div className='self-center justify-center  flex gap-2 items-center overflow-hidden'>
           <motion.div
@@ -82,7 +82,7 @@ const Finally = () => {
 
         </div>
 
-        <div></div>
+        <div className='hidden'></div>
 
     </motion.div>
   )
