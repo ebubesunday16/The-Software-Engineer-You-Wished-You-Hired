@@ -120,7 +120,7 @@ const SecondFeaturedProject = () => {
             borderTopRightRadius: useTransform(scrollYProgress, [0, 0.45], [32, 0]),
             borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.45], [32, 0]),
         }}
-        className='bg-brand-black text-brand-white px-4 py-16 space-y-8 pb-32 border border-white'>
+        className='bg-brand-black text-brand-white px-4 py-16 space-y-8 pb-32 '>
         <div className='font-champBlack text-2xl sticky top-0 py-5 bg-brand-black'>
             Featured Project
         </div>
