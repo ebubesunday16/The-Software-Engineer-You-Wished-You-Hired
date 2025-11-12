@@ -35,7 +35,7 @@ const Stack = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1, x: 0, scale: [0.95, 1.05, 1]  } : { opacity: 0}}
-            transition={{ duration: 0.1, ease: 'easeOut' }}
+            transition={{ duration: 0.2, delay: 0.4, ease: 'easeOut' }}
             style={{
               color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414']),
             }}
@@ -46,7 +46,7 @@ const Stack = () => {
           <motion.p
             initial={{ width: 0, opacity: 0 }}
             animate={isInView ? { width: 'auto', opacity: 1, scale: [0.95, 1.05, 1]  } : { width: 0, opacity: 0 }}
-            transition={{ duration: 0.2, delay: 0.3, ease: 'easeOut' }}
+            transition={{ duration: 0.2, delay: 0.4, ease: 'easeOut' }}
             className='rounded-[12px] border border-[#FBF0E6] font-semibold text-xs text-[#FBF0E6] py-1.5 px-2.5 whitespace-nowrap overflow-hidden'
             style={{
               color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414']),
