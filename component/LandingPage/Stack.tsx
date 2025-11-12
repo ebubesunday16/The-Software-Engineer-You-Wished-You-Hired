@@ -1,7 +1,7 @@
 'use client'
 import { Images } from '@/assets/png'
 import { LabelOne, LabelTwo, Leaf, Leaf2 } from '@/assets/svg'
-import { motion, useMotionValueEvent, useSpring, useTransform } from 'motion/react'
+import { motion, useInView, useMotionValueEvent, useSpring, useTransform } from 'motion/react'
 import { useScroll } from 'motion/react'
 import Image from 'next/image'
 import React, { useRef } from 'react'
@@ -12,6 +12,9 @@ const Stack = () => {
     target: pageRef,
     offset: ['start start', 'end start']
   })
+
+  const isInView = useInView(pageRef, {  })
+
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     console.log('scrollYProgress for stack', latest)
@@ -28,16 +31,35 @@ const Stack = () => {
           background: useTransform(scrollYProgress, [0, 0.1111, 0.8, 0.9], ['#141414', '#faeadc', '#faeadc', '#141414'])
         }}
       >
+        <div className='self-center justify-center  flex gap-2 items-center overflow-hidden'>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1, x: 0, scale: [0.95, 1.05, 1]  } : { opacity: 0}}
+            transition={{ duration: 0.1, ease: 'easeOut' }}
+            style={{
+              color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414']),
+            }}
+          >
+            <LabelTwo />
+          </motion.div>
+
+          <motion.p
+            initial={{ width: 0, opacity: 0 }}
+            animate={isInView ? { width: 'auto', opacity: 1, scale: [0.95, 1.05, 1]  } : { width: 0, opacity: 0 }}
+            transition={{ duration: 0.2, delay: 0.3, ease: 'easeOut' }}
+            className='rounded-[12px] border border-[#FBF0E6] font-semibold text-xs text-[#FBF0E6] py-1.5 px-2.5 whitespace-nowrap overflow-hidden'
+            style={{
+              color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414']),
+              borderColor: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414'])
+            }}
+          >
+            Stack
+          </motion.p>
+
+          
+        </div>
         
-        <motion.div 
-          className='self-center flex gap-2 items-center'
-          style={{
-            color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414'])
-          }}
-        >
-          <LabelTwo />
-          <p className='rounded-[12px] border font-semibold text-xs py-1.5 px-2.5' style={{borderColor: 'currentColor'}}>Stack</p>
-        </motion.div>
+        
 
         <motion.div 
           className='text-xs flex flex-col items-center'
@@ -76,7 +98,7 @@ const Stack = () => {
         <motion.div 
           className='space-y-4 text-xs'
           style={{
-            opacity: useTransform(scrollYProgress, [0.5, 0.55], [0, 1])
+            color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414'])
           }}
         >
           <p>I usually adapt my stack to the project's needs, but I've worked the most with React, and Next.js for web, Nodejs for backend, PostgreSQL for databases, and React Native for mobile apps.</p>
