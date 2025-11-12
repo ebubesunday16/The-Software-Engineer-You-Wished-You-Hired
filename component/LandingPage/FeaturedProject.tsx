@@ -7,7 +7,7 @@ import { motion } from 'motion/react'
 const FeaturedProject = () => {
   const scrollRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
-  const imageCount = 3 // Update this based on your actual images
+  const imageCount = 4 // Update this based on your actual images
 
   const Contributions = [
     'Built and deployed the full MVP using Next.js for the frontend and Supabase for backend services.',
@@ -124,7 +124,7 @@ const FeaturedProject = () => {
             }}
           >
             {/* Replace with your actual images */}
-            {[Images.Featured, Images.Featured, Images.Featured].map((image, index) => (
+            {[Images.Featured, Images.Featured2, Images.Featured3, Images.Featured4].map((image, index) => (
               <motion.div
                 key={index}
                 className='min-w-full snap-center'
