@@ -1,7 +1,7 @@
 'use client'
 import React, { useRef } from 'react'
 import {motion, useInView, useMotionValueEvent, useScroll, useTransform} from 'motion/react'
-import { LabelTwo, Speaker } from '@/assets/svg'
+import { LabelThree, LabelTwo, Speaker } from '@/assets/svg'
 import Image from 'next/image'
 import { Images } from '@/assets/png'
 import { div } from 'motion/react-client'
@@ -21,7 +21,7 @@ const Finally = () => {
 
       <motion.div
         ref={pageRef}
-        className='px-4 h-screen flex flex-col justify-between py-24 bg-brand-black border border-white'
+        className='px-4 h-screen flex flex-col justify-between py-24 bg-brand-black '
         style={{
             borderTopLeftRadius: useTransform(scrollYProgress, [0, 0.067, 0.134, 0.2, 0.4], [72, 16, 16, 10.66,  0]),
             borderTopRightRadius: useTransform(scrollYProgress, [0, 0.067, 0.134, 0.2, 0.4 ], [72, 16, 16, 10.66, 0]),
@@ -33,18 +33,18 @@ const Finally = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1, x: 0, scale: [0.95, 1.05, 1]  } : { opacity: 0}}
-              transition={{ duration: 0.2, delay: 0.4, ease: 'easeOut' }}
+              transition={{ duration: 0.3, delay: 0.3, ease: 'easeOut' }}
               style={{
                 color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414']),
               }}
             >
-              <LabelTwo />
+              <LabelThree />
             </motion.div>
 
             <motion.p
               initial={{ width: 0, opacity: 0 }}
               animate={isInView ? { width: 'auto', opacity: 1, scale: [0.95, 1.05, 1]  } : { width: 0, opacity: 0 }}
-              transition={{ duration: 0.2, delay: 0.4, ease: 'easeOut' }}
+              transition={{ duration: 0.4, delay: 0.3, ease: 'easeOut' }}
               className='rounded-[12px] border border-[#FBF0E6] font-semibold text-xs text-[#FBF0E6] py-1.5 px-2.5 whitespace-nowrap overflow-hidden'
               
             >
@@ -85,13 +85,36 @@ const Finally = () => {
 
               </div>
 
-              <div className='flex items-center gap-1.5'>
-                <div className='bg-[#F3C7DE] border border-[#2E282A] py-2.5 px-4 rounded-[37px] text-xs font-bold text-center flex-3/5 '>Get In Touch</div>
-                <div className='border border-[#2E282A] py-2.5 px-4 rounded-[37px] text-xs font-bold text-center flex-1/5'>LinkedIn</div>
-                <div className='border border-[#2E282A] py-2.5 px-4 rounded-[37px] text-xs font-bold text-center flex-1/5'>Whatsapp</div>
-                
+              <div className='flex items-stretch gap-1.5'>
+                {/* Email */}
+                <a 
+                  href="mailto:ebubesunday16@gmail.com" 
+                  className='bg-[#F3C7DE] border border-[#2E282A] py-2.5 px-4 rounded-[37px] text-xs font-bold text-center flex-3/5 flex items-center justify-center hover:bg-[#f7bcd7] transition-colors'
+                >
+                  Get In Touch
+                </a>
 
+                {/* LinkedIn */}
+                <a 
+                  href="https://www.linkedin.com/in/emannsunday/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className='border border-[#2E282A] py-2.5 px-4 rounded-[37px] text-xs font-bold text-center flex-1/5 flex items-center justify-center hover:bg-gray-100 transition-colors'
+                >
+                  LinkedIn
+                </a>
+
+                {/* WhatsApp */}
+                <a 
+                  href="https://wa.me/2348054730811" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className='border border-[#2E282A] py-2.5 px-4 rounded-[37px] text-xs font-bold text-center flex-1/5 flex items-center justify-center hover:bg-gray-100 transition-colors'
+                >
+                  WhatsApp
+                </a>
               </div>
+
             </div>
 
           </div>

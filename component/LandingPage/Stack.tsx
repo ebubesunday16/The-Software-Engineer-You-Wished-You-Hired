@@ -22,11 +22,11 @@ const Stack = () => {
 
   return (
     <motion.div 
-      className='h-[200vh] mt-12'
+      className='h-[200vh] '
       ref={pageRef}
     >
       <motion.div 
-        className='h-screen sticky top-0 flex flex-col justify-between items-center space-y-12 py-12 px-4'
+        className='h-screen sticky top-0 flex flex-col justify-between items-center space-y-12 py-12 px-4 mt-24'
         style={{
           background: useTransform(scrollYProgress, [0, 0.1111, 0.8, 0.9], ['#141414', '#faeadc', '#faeadc', '#141414'])
         }}
@@ -35,7 +35,7 @@ const Stack = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1, x: 0, scale: [0.95, 1.05, 1]  } : { opacity: 0}}
-            transition={{ duration: 0.2, delay: 0.4, ease: 'easeOut' }}
+            transition={{ duration: 0.3, delay: 0.3, ease: 'easeOut' }}
             style={{
               color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414']),
             }}
@@ -46,7 +46,7 @@ const Stack = () => {
           <motion.p
             initial={{ width: 0, opacity: 0 }}
             animate={isInView ? { width: 'auto', opacity: 1, scale: [0.95, 1.05, 1]  } : { width: 0, opacity: 0 }}
-            transition={{ duration: 0.2, delay: 0.4, ease: 'easeOut' }}
+            transition={{ duration: 0.4, delay: 0.3, ease: 'easeOut' }}
             className='rounded-[12px] border border-[#FBF0E6] font-semibold text-xs text-[#FBF0E6] py-1.5 px-2.5 whitespace-nowrap overflow-hidden'
             style={{
               color: useTransform(scrollYProgress, [0, 0.1111], ['#fdf9f0', '#141414']),
