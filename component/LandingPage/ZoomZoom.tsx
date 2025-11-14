@@ -3,6 +3,7 @@ import { Hashtag, Speaker, Zoom } from '@/assets/svg'
 import Header from '@/component/Header'
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, useMotionValueEvent, useScroll, useSpring, useTransform } from 'motion/react'
+import { useRouter } from 'next/navigation'
 
 
 const ZoomZoom = () => {
@@ -16,6 +17,8 @@ const ZoomZoom = () => {
     target: pageRef,
     offset: ["start end", "end start"] 
   })
+
+  const router = useRouter()
 
   // useMotionValueEvent(scrollYProgress, "change", (latest) => {
   //   console.log("scrollYProgress", latest)
@@ -218,10 +221,12 @@ const ZoomZoom = () => {
           }}
           >
 
-            <button className='bg-[#F3C7DE] rounded-[37px] self-center px-12 py-2'>
-              <span className='text-[#2E282A] font-bold'>Let's build that idea together</span>
+            <button 
+            onClick={() => router.push('#finally')}
+            className='bg-[#F3C7DE] rounded-[37px] self-center px-12 sm:px-20 py-2 sm:py-3'>
+              <span className='text-[#2E282A] font-bold sm:text-lg'>Let's build that idea together</span>
             </button>
-            <p className='text-brand-white text-center text-sm'>disclaimer: you may smile excessively</p>
+            <p className='text-brand-white text-center text-sm sm:text-base'>disclaimer: you may smile excessively</p>
           </motion.div>
           
       </motion.div>
