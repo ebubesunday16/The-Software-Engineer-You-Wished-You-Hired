@@ -101,15 +101,15 @@ const FeaturedProject = () => {
   return (
     <div 
     
-      className='text-brand-white px-4 space-y-8 pb-32'
+      className='text-brand-white space-y-8 pb-32 max-w-[1200px] mx-auto'
       id='featured'
       >
-      <div className='font-champBlack text-2xl sticky top-0 py-5 bg-brand-black z-50'>
+      <div className='font-champBlack text-2xl sm:text-3xl lg:text-4xl sticky top-0 py-5 bg-brand-black z-50 px-4'>
         SOAPNotes Doctor
       </div>
 
       {/* Apple-style image carousel */}
-      <div className='w-full'>
+      <div className='px-4 w-full'>
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -131,7 +131,7 @@ const FeaturedProject = () => {
             {[Images.Featured, Images.Featured2, Images.Featured3, Images.Featured4].map((image, index) => (
               <motion.div
                 key={index}
-                className='min-w-full snap-center'
+                className='min-w-full sm:hidden snap-center'
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -141,6 +141,25 @@ const FeaturedProject = () => {
                   src={image}
                   width={390}
                   height={250}
+                  alt={`Project image ${index + 1}`}
+                  className='w-full rounded-2xl shadow-2xl'
+                />
+              </motion.div>
+            ))}
+
+            {[Images.SMFeatured, Images.SMFeatured2, Images.SMFeatured3, Images.SMFeatured4].map((image, index) => (
+              <motion.div
+                key={index}
+                className='min-w-full hidden sm:block snap-center'
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Image
+                  src={image}
+                  width={1065}
+                  height={325}
                   alt={`Project image ${index + 1}`}
                   className='w-full rounded-2xl shadow-2xl'
                 />
@@ -166,30 +185,33 @@ const FeaturedProject = () => {
         </motion.div>
       </div>
 
-      <div className='space-y-4'>
-        <p className='font-champBlack text-lg'>AI-powered clinical documentation platform for healthcare professionals</p>
-        <motion.p
-          className='text-sm'
-          variants={containerVariants}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true }}
-        >
-          {
-            splitDescription.map((item, index) => (
-              <motion.span
-                key={index}
-                variants={wordVariants}
-              >
-                {item + ' '}
-              </motion.span>
-            ))
-          }
-        </motion.p>
+      <div className='flex flex-col sm:flex-row sm:items-start px-4'>
+        <div className='space-y-4 flex-1'>
+          <p className='font-champBlack text-xl sm:text-2xl'>AI-powered Clinical Documentation Platform</p>
+          <motion.p
+            className='text-sm sm:text-base'
+            variants={containerVariants}
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+          >
+            {
+              splitDescription.map((item, index) => (
+                <motion.span
+                  key={index}
+                  variants={wordVariants}
+                >
+                  {item + ' '}
+                </motion.span>
+              ))
+            }
+          </motion.p>
+          
+        </div>
 
-        <div className='space-y-6'>
+        <div className='space-y-6 flex-1'>
           <div className='space-y-8'>
-            <p className='text-sm font-semibold'>Key Contributions:</p>
+            <p className='text-sm sm:text-base font-semibold'>Key Contributions:</p>
             <div>
               <motion.ul
                 className='space-y-4'
@@ -207,7 +229,7 @@ const FeaturedProject = () => {
                         viewport={{ once: true }}
                       >
                         <div
-                          className='rounded-full flex items-center justify-center text-sm bg-[#8BDFDD] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
+                          className='rounded-full flex items-center justify-center text-sm sm:text-base bg-[#8BDFDD] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
                         >{paragraphIndex + 1}</div>
 
                         <motion.p className='text-sm'>
@@ -230,7 +252,7 @@ const FeaturedProject = () => {
           </div>
 
           <div className='space-y-8'>
-            <p className='text-sm font-semibold'>Impact:</p>
+            <p className='text-sm s:text-base font-semibold'>Impact:</p>
             <div>
               <motion.ul
                 className='space-y-4'
@@ -248,7 +270,7 @@ const FeaturedProject = () => {
                         viewport={{ once: true }}
                       >
                         <div
-                          className='rounded-full flex items-center justify-center text-sm bg-[#EDB88B] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
+                          className='rounded-full flex items-center justify-center text-sm sm:text-base bg-[#EDB88B] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
                         >{i + 1}</div>
                         <motion.p className='text-sm'>{paragraph.split(' ').map((word, wordIndex) => (
                           <motion.span

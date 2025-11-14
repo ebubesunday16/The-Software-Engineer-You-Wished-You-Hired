@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-[1320px] bg-brand-black mx-auto ${champBlack.variable} ${aeonik.className}`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-brand-black mx-auto ${champBlack.variable} ${aeonik.className}`}
       >
         {children}
       </body>

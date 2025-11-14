@@ -78,103 +78,120 @@ const Introduction = () => {
       className='bg-brand-black h-[200vh]'
     >
       <motion.div 
-        className='min-h-screen sticky top-0 bg-brand-black flex flex-col items-start justify-center gap-y-12 py-24 px-4'
+        className='h-screen sticky top-0 bg-brand-black '
         id='introduction'
       >
-        <div className='self-center justify-center  flex gap-2 items-center overflow-hidden'>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={PageView ? { opacity: 1, x: 0, scale: [0.95, 1.05, 1]  } : { opacity: 0}}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
-          >
-            <LabelOne />
-          </motion.div>
-
-          <motion.p
-            initial={{ width: 0, opacity: 0 }}
-            animate={PageView ? { width: 'auto', opacity: 1, scale: [0.95, 1.05, 1]  } : { width: 0, opacity: 0 }}
-            transition={{ duration: 0.4, delay: 0.3, ease: 'easeOut' }}
-            className='rounded-[12px] border border-[#FBF0E6] font-semibold text-xs text-[#FBF0E6] py-1.5 px-2.5 whitespace-nowrap overflow-hidden'
-          >
-            Introduction
-          </motion.p>
-
-          
-        </div>
-
-
-        <Image 
-          src={Images.Me}
-          width={277}
-          height={184}
-          alt=''
-          className='self-center'
-        />
-
-        <div className=''>
-          <span>
-            <LabelDiamond className="inline-block mb-2 mr-1.5" />
-          </span>
-          <span className='text-2xl font-champBlack text-brand-white'>
-            I’m Emmanuel Sunday,&nbsp;
-
-            {/* 🔥 Dynamic Frontend / Backend span */}
-            <motion.span 
-              layout
-              className='bg-[#8BDFDD] text-brand-black px-2 rounded-[8px] inline-block relative'
+        <div className='max-w-[1200px] mx-auto flex flex-col justify-between items-center py-24 px-4 h-full'>
+          <div className=' justify-center  flex gap-2 items-center overflow-hidden'>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={PageView ? { opacity: 1, x: 0, scale: [0.95, 1.05, 1]  } : { opacity: 0}}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
             >
-              <AnimatePresence mode='wait'>
-                <motion.span
-                  key={softwareText}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.25 }}
-                  className='inline-block'
-                >
-                  {softwareText}
-                </motion.span>
-              </AnimatePresence>
-            </motion.span>
+              <LabelOne />
+            </motion.div>
 
-            &nbsp;Engineer, and CS Junior Student.
-          </span>
+            <motion.p
+              initial={{ width: 0, opacity: 0 }}
+              animate={PageView ? { width: 'auto', opacity: 1, scale: [0.95, 1.05, 1]  } : { width: 0, opacity: 0 }}
+              transition={{ duration: 0.4, delay: 0.3, ease: 'easeOut' }}
+              className='rounded-[12px] border border-[#FBF0E6] font-semibold text-xs text-[#FBF0E6] py-1.5 px-2.5 whitespace-nowrap overflow-hidden'
+            >
+              Introduction
+            </motion.p>
+
+            
+          </div>
+
+          <div className='flex flex-col sm:flex-row items-center gap-x-4 lg:gap-x-8 gap-y-2 justify-center'>
+            <div className='flex-1'>
+              <Image 
+                src={Images.Me}
+                width={277}
+                height={184}
+                sizes="(max-width: 768px) 333px, (max-width: 1200px) 420px"
+                
+                alt=''
+                className=' w-full sm:max-w-[460px]'
+              />
+
+            </div>
+
+            <div className='flex-1 space-y-4'>
+              <div className=''>
+                <span>
+                  <LabelDiamond className="inline-block mb-2 mr-1.5" />
+                </span>
+                <span className='text-2xl sm:text-3xl lg:text-4xl  font-champBlack text-brand-white'>
+                  I’m Emmanuel Sunday,&nbsp;
+
+                  {/* 🔥 Dynamic Frontend / Backend span */}
+                  <motion.span 
+                    layout
+                    className='bg-[#8BDFDD] text-brand-black px-2 rounded-[8px] inline-block relative'
+                  >
+                    <AnimatePresence mode='wait'>
+                      <motion.span
+                        key={softwareText}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.25 }}
+                        className='inline-block'
+                      >
+                        {softwareText}
+                      </motion.span>
+                    </AnimatePresence>
+                  </motion.span>
+
+                  &nbsp;Engineer, and CS Junior Student.
+                </span>
+              </div>
+
+              <motion.div className='space-y-4 text-brand-white text-sm sm:text-base'>
+                <motion.p
+                  ref={stickRef}
+                  variants={containerVariants}
+                  initial='hidden'
+                  animate={isInView ? 'visible' : 'hidden'}
+                >
+                  {words.map((item, i) => (
+                    <motion.span
+                      key={i}
+                      variants={wordVariants}
+                      className='text-[#313131] bg-[#313131] rounded-3xl'
+                    >
+                      {item + ' '}
+                    </motion.span>
+                  ))}
+                </motion.p>
+
+                <motion.p
+                  variants={containerVariants2}
+                  initial='hidden'
+                  animate={isInView ? 'visible' : 'hidden'}
+                >
+                  {words2.map((item, i) => (
+                    <motion.span
+                      key={i}
+                      variants={wordVariants}
+                      className='text-[#313131] bg-[#313131] rounded-3xl'
+                    >
+                      {item + ' '}
+                    </motion.span>
+                  ))}
+                </motion.p>
+              </motion.div>
+            </div>
+
+          </div>
+
+          <div className='lg:hidden'></div> 
+
         </div>
 
-        <motion.div className='space-y-4 text-brand-white text-sm'>
-          <motion.p
-            ref={stickRef}
-            variants={containerVariants}
-            initial='hidden'
-            animate={isInView ? 'visible' : 'hidden'}
-          >
-            {words.map((item, i) => (
-              <motion.span
-                key={i}
-                variants={wordVariants}
-                className='text-[#313131] bg-[#313131] rounded-3xl'
-              >
-                {item + ' '}
-              </motion.span>
-            ))}
-          </motion.p>
 
-          <motion.p
-            variants={containerVariants2}
-            initial='hidden'
-            animate={isInView ? 'visible' : 'hidden'}
-          >
-            {words2.map((item, i) => (
-              <motion.span
-                key={i}
-                variants={wordVariants}
-                className='text-[#313131] bg-[#313131] rounded-3xl'
-              >
-                {item + ' '}
-              </motion.span>
-            ))}
-          </motion.p>
-        </motion.div>
+
       </motion.div>
     </motion.div>
   )

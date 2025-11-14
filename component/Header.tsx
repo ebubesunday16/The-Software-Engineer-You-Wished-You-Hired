@@ -33,7 +33,7 @@ const Header = ({ className }: { className: string }) => {
     <>
       {/* Header Bar */}
       <div
-        className={`bg-[#232323] border border-[#313131] flex items-center justify-center self-center px-4 py-1.5 space-x-3 rounded-[12px] relative z-50 ${className}`}
+        className={`bg-[#232323] border border-[#313131] flex items-center justify-center self-center px-4 py-1.5 space-x-3 rounded-[12px] relative z-50 my-6 ${className}`}
       >
         <Image src={Images.Logo} width={35} height={35} alt='Logo' />
         <button onClick={handleMenuToggle} className='cursor-pointer'>
