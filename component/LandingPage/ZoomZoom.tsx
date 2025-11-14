@@ -76,11 +76,11 @@ const ZoomZoom = () => {
   console.log('animation width', animationWidth)
   return (
     <motion.div 
-    className='h-[300vh] pb-8 flex flex-col ' 
+    className='h-[300vh]  flex flex-col ' 
     ref={pageRef}>
 
       <motion.div 
-      className='sticky top-0 flex flex-col justify-between h-screen px-4 pb-6'
+      className='sticky top-4 flex flex-col justify-between h-screen px-4 pb-6'
       >
           <Header className=""/>
         
