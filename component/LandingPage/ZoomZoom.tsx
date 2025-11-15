@@ -73,15 +73,14 @@ const ZoomZoom = () => {
     return () => window.removeEventListener('resize', handleAnimationWidth)
   }, [])
 
-  console.log('animation width', animationWidth)
   return (
     <motion.div 
     className='h-[300vh]  flex flex-col ' 
     ref={pageRef}>
 
       <motion.div 
-      className='sticky top-4 flex flex-col justify-between h-screen px-4 pb-6'
-      >
+      className='h-screen sticky top-0  flex flex-col justify-between pt-6 px-4 pb-6'
+      > 
           <Header className=""/>
         
           <motion.div 
@@ -149,7 +148,7 @@ const ZoomZoom = () => {
             </motion.div>
 
             <motion.div 
-          className='absolute inset-0  mx-auto items-center text-center text-brand-white  font-champBlack space-y-5  text-4xl sm:text-5xl md:text-6xl lg:text-5xl'
+          className='absolute inset-0  mx-auto items-center text-center text-brand-white  font-champBlack space-y-5  text-4xl sm:text-5xl md:text-6xl lg:text-5xl overflow-x-hidden'
           style={{
             // y: useTransform(scrollYProgress, [0.48, 0.485], [0, -530 * animationWidth]),
             opacity: useTransform(scrollYProgress, [0.48, 0.5], [0, 1])
