@@ -3,6 +3,8 @@ import { Images } from '@/assets/png'
 import Image from 'next/image'
 import React, { useRef, useState, useEffect } from 'react'
 import { motion } from 'motion/react'
+import { Link } from '@/assets/svg'
+import { useRouter } from 'next/navigation'
 
 const FeaturedProject = () => {
   const scrollRef = useRef(null)
@@ -98,14 +100,28 @@ const FeaturedProject = () => {
     },
   }
 
+  const router = useRouter()
+
   return (
     <div 
     
       className='text-brand-white space-y-8 pb-32 max-w-[1200px] mx-auto'
       id='featured'
       >
-      <div className='font-champBlack text-2xl sm:text-3xl lg:text-4xl sticky top-0 py-5 bg-brand-black z-50 px-4'>
-        SOAPNotes Doctor
+      <div className='font-champBlack text-2xl sm:text-3xl lg:text-4xl sticky top-0 py-5 bg-brand-black z-50 px-4 flex justify-between items-center'>
+        <p>
+          SOAPNotes Doctor
+        </p>
+        <a
+            href="https://soapnotes.doctor"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer bg-black text-white px-4 py-2 rounded"
+          >
+
+              <Link  className='text-[#fdf9f0] '/>
+          </a>
+
       </div>
 
       {/* Apple-style image carousel */}
