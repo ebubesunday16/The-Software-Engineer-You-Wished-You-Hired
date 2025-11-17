@@ -201,7 +201,7 @@ const SecondFeaturedProject = () => {
         </div>
 
         <div className=' px-4 flex flex-col sm:flex-row sm:items-start'>
-          <div className='space-y-4 flex-1'>
+          <div className='space-y-4 flex-1 lg:sticky lg:top-12'>
             <p className='font-champBlack text-xl sm:text-2xl'>Pharmacy Delivery Mobile App</p>
             <motion.p
               className='text-sm sm:text-base'

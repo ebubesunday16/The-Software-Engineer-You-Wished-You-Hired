@@ -202,7 +202,7 @@ const FeaturedProject = () => {
       </div>
 
       <div className='flex flex-col sm:flex-row sm:items-start px-4'>
-        <div className='space-y-4 flex-1'>
+        <div className='space-y-4 flex-1 lg:sticky lg:top-12'>
           <p className='font-champBlack text-xl sm:text-2xl'>AI-powered Clinical Documentation Platform</p>
           <motion.p
             className='text-sm sm:text-base'
