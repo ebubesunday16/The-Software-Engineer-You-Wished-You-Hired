@@ -49,8 +49,8 @@ const FunFact = () => {
         }}
         
         >
-          <p className='font-bold text-xs sm:text-sm'>Here's a fun fact:</p>
-          <p className='text-sm sm:text-base'>We build a lot here.</p>
+          <p className='font-bold text-xs '>Here's a fun fact:</p>
+          <p className='text-sm '>We build a lot here.</p>
         </motion.div>
 
         <div className="relative ">

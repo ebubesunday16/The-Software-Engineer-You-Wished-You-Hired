@@ -73,7 +73,7 @@ const Finally = () => {
 
             <div className='bg-[#F5DDD6] border border-[#DC8771] rounded-[24px] p-6 lg:p-4 space-y-4'>
               <div className='flex items-center sm:justify-between gap-4'>
-                <div className='gap-8 flex-1 flex flex-col'>
+                <div className='gap-8 flex-1 lg:flex-2/5 flex flex-col'>
 
                   <Image 
                     src={Images.FinalMe}
@@ -114,7 +114,7 @@ const Finally = () => {
                   </div>
                 </div>
 
-                <p className='text-xl sm:text-4xl font-champBlack text-brand-black flex-1 max-w-[480px]'>
+                <p className='text-xl sm:text-4xl lg:text-5xl font-champBlack text-brand-black flex-1 max-w-[480px]  lg:max-w-none  lg:flex-3/5'>
                 The software engineer you wish You hired
                 </p>
 

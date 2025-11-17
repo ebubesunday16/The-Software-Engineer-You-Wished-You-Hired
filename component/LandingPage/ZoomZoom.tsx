@@ -84,7 +84,7 @@ const ZoomZoom = () => {
           <Header className=""/>
         
           <motion.div 
-          className=' relative  flex flex-col items-center gap-y-4 mx-auto min-h-[320px] min-w-[320px] sm:min-w-[400px] sm:min-h-[400px] md:min-w-[600px] md:min-h-[600px] lg:min-w-[600px] lg:min-h-[300px] '
+          className=' relative  flex flex-col items-center gap-y-4 mx-auto min-h-[320px] min-w-[320px] sm:min-w-[400px] sm:min-h-[400px] md:min-w-[600px] md:min-h-[600px] lg:min-w-[600px] lg:min-h-[360px] '
           variants={parent}
           initial="hidden"
           animate="show"
@@ -97,7 +97,7 @@ const ZoomZoom = () => {
           >
 
             <motion.div 
-            className='bg-[#17BEBB] flex items-center justify-center w-25 h-25 rounded-[16px] absolute -translate-x-16 sm:-translate-x-24 lg:-translate-x-16  sm:-translate-y-48 lg:translate-y-6   bottom-18'
+            className='bg-[#17BEBB] flex items-center justify-center w-25 h-25 rounded-[16px] absolute -translate-x-16 sm:-translate-x-24 lg:-translate-x-16  sm:-translate-y-48 lg:-translate-y-6   bottom-18'
             variants={child}
             transition={{
               type: 'spring',
@@ -115,7 +115,7 @@ const ZoomZoom = () => {
             </motion.div>
 
             <motion.div 
-            className='bg-[#CD5334] flex items-center justify-center w-25 h-25 rounded-[16px] absolute translate-x-20 sm:translate-x-32 lg:translate-x-24 -translate-y-4 bottom-12 sm:-translate-y-56 lg:translate-y-6 transform scale-160'
+            className='bg-[#CD5334] flex items-center justify-center w-25 h-25 rounded-[16px] absolute translate-x-20 sm:translate-x-32 lg:translate-x-24 -translate-y-4 bottom-12 sm:-translate-y-56 lg:-translate-y-6 transform scale-160'
             variants={child}
             
             style={{
@@ -130,7 +130,7 @@ const ZoomZoom = () => {
             </motion.div>
 
             <motion.div 
-            className='w-25 h-25 flex items-center justify-center bg-[#EDB88B] rounded-[16px] row-start-2 absolute transform bottom-0 -translate-y-4 sm:-translate-x-12 sm:-translate-y-56 lg:translate-y-2 lg:-translate-x-6 scale-140'
+            className='w-25 h-25 flex items-center justify-center bg-[#EDB88B] rounded-[16px] row-start-2 absolute transform bottom-0 -translate-y-4 sm:-translate-x-12 sm:-translate-y-56 lg:-translate-y-8 lg:-translate-x-2 scale-140'
             variants={child}
             transition={{
               type: 'spring',
@@ -211,7 +211,7 @@ const ZoomZoom = () => {
           </motion.div>
 
           <motion.div 
-          className={`self-center space-y-4 h-48 flex flex-col justify-center ${ctaVisibility ? 'block' : 'hidden'} `}
+          className={`self-center space-y-4 h-48 sm:h-28 flex flex-col justify-center ${ctaVisibility ? 'block' : 'hidden'} `}
           style={{
             // y: useTransform(scrollYProgress, [0.61, 0.62], [0, -480]),
             opacity: useTransform(scrollYProgress, [0.56, 0.7], [0, 1]),
@@ -222,10 +222,10 @@ const ZoomZoom = () => {
 
             <button 
             onClick={() => router.push('#finally')}
-            className='bg-[#F3C7DE] rounded-[37px] self-center px-12 sm:px-20 py-2 sm:py-3'>
-              <span className='text-[#2E282A] font-bold sm:text-lg'>Let's build that idea together</span>
+            className='bg-[#F3C7DE] rounded-[37px] self-center px-12 sm:px-20 py-2 '>
+              <span className='text-[#2E282A] font-bold '>Let's build that idea together</span>
             </button>
-            <p className='text-brand-white text-center text-sm sm:text-base'>disclaimer: you may smile excessively</p>
+            <p className='text-brand-white text-center text-sm '>disclaimer: you may smile excessively</p>
           </motion.div>
           
       </motion.div>
