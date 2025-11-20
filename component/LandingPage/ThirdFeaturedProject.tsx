@@ -3,11 +3,12 @@ import { Images } from '@/assets/png'
 import Image from 'next/image'
 import React, { useRef, useState, useEffect } from 'react'
 import { motion, useMotionValueEvent, useScroll, useTransform } from 'motion/react'
+import { Link } from '@/assets/svg'
 
-const SecondFeaturedProject = () => {
+const ThirdFeaturedProject = () => {
   const scrollRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
-  const imageCount = 5 // Update this based on your actual images
+  const imageCount = 4 
 
 
   const sectionRef = useRef(null)
@@ -17,31 +18,33 @@ const SecondFeaturedProject = () => {
   })
 
   const Contributions = [
-    'Built the mobile app using Expo Router with a modular, scalable structure and optimized screen navigation.',
-    'Implemented client-side data fetching and caching with React Query for smooth and performant user interactions.',
-    'Developed real-time order tracking and system synchronization using Supabase Realtime channels and database triggers.',
-    'Integrated Agora for secure HD video consultations between patients and healthcare consultants.',
-    'Implemented location-based features including driver live tracking and map rendering using React Native Maps.',
-    'Developed a full chat system backed by Supabase Realtime with typing indicators, delivery receipts, and persistent message storage.',
-    'Configured Supabase Auth for secure user onboarding across customers, drivers, consultants, and pharmacies.',
-    'Engineered automated order and driver assignment workflows using Supabase triggers and server-side business rules.',
-    'Implemented role-based access control and Supabase Row Level Security (RLS) to protect sensitive medical and personal data.',
-    'Optimized notifications using Expo Push Notifications for order updates, delivery status changes, and consultation alerts.',
-    'Deployed the backend on Vercel and managed mobile app builds with Expo EAS for stable production releases.',
+    "Developed and maintained the backend using Express.js with Firebase as the primary database and authentication provider.",
+    "Implemented Firebase Authentication and React Query integration for secure and seamless login flows across farmer, herder, and agency roles.",
+    "Designed a multi-role access system enabling farmers, herders, and law enforcement agencies to access tailored dashboards and resources.",
+    "Structured and optimized Firestore collections for tracking incidents, reports, locations, and role-specific activities.",
+    "Built secure Express APIs for incident reporting, location syncing, farmer–herder conflict alerts, and role-based data retrieval.",
+    "Implemented real-time Firestore listeners to allow agencies to immediately monitor field updates and active incidents.",
+    "Added server-side validation, JWT protection, and Firebase security rules to ensure safe data flow between roles.",
+    "Integrated automated notification workflows for escalating reports to the appropriate enforcement agency.",
   ];
+  
   
   
   const Impact = [
-    'Delivered a seamless mobile experience for requesting prescriptions, booking consultations, and tracking deliveries in real time.',
-    'Improved access to healthcare professionals through high-quality video sessions powered by Agora.',
-    'Enhanced operational efficiency for pharmacies with automated order routing, assignment rules, and real-time stock visibility.',
-    'Boosted customer satisfaction by enabling instant messaging with drivers and consultants, backed by reliable Realtime updates.',
+    "Enabled real-time coordination between farmers, herders, and security agencies to reduce conflict escalation.",
+    "Improved the accuracy of field reporting using a structured backend that supports instant updates and verified submissions.",
+    "Enhanced safety response times through automated notifications and live agency dashboards.",
+    "Provided a stable and secure backend foundation that scaled smoothly across multiple user roles and field operations.",
   ];
   
   
+  
   const description = `
-  iDeliver is a mobile platform that connects customers, pharmacies, drivers, and healthcare consultants in one ecosystem. It allows users to order drugs, book consultations, chat with practitioners, and track deliveries in real time  all within a secure and easy-to-use app.
-  `
+AgroTrack is a conflict-prevention and field-monitoring platform designed to support farmers, herders, and law enforcement agencies. 
+It enables users to report incidents, track real-time updates, receive alerts, and coordinate responses through a secure backend powered by Express and Firebase. 
+The system ensures accountability, communication, and rapid intervention across all user roles in the ecosystem.
+`
+
   
 
   const splitDescription = description.split(' ')
@@ -125,9 +128,21 @@ const SecondFeaturedProject = () => {
         }}
         className='bg-brand-black text-brand-white space-y-8 pb-32 max-w-[1200px] mx-auto'
       >
-        <div className='font-champBlack text-2xl sm:text-3xl lg:text-4xl sticky top-0 py-5 bg-brand-black z-50  px-4'>
-          IDeliver
-        </div>
+        <div className='font-champBlack text-2xl sm:text-3xl lg:text-4xl sticky top-0 py-5 bg-brand-black z-50 px-4 flex justify-between items-center'>
+        <p>
+          AGROTRACK 
+        </p>
+        <a
+            href="https://agrotrack-app.web.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer"
+          >
+
+              <Link />
+          </a>
+
+      </div>
 
         {/* Apple-style image carousel */}
         <div className='w-full  px-4'>
@@ -149,7 +164,7 @@ const SecondFeaturedProject = () => {
               }}
             >
               {/* Replace with your actual images */}
-              {[Images.SecondFeatured, Images.SecondFeatured2, Images.SecondFeatured3, Images.SecondFeatured4, Images.SecondFeatured5].map((image, index) => (
+              {[Images.ThirdFeatured, Images.ThirdFeatured2, Images.ThirdFeatured3, Images.ThirdFeatured4].map((image, index) => (
                 <motion.div
                   key={index}
                   className='min-w-full snap-center sm:hidden'
@@ -168,7 +183,7 @@ const SecondFeaturedProject = () => {
                 </motion.div>
               ))}
 
-              {[Images.SMSecondFeatured, Images.SMSecondFeatured2, Images.SMSecondFeatured3, Images.SMSecondFeatured4, Images.SMSecondFeatured5].map((image, index) => (
+              {[Images.SMThirdFeatured, Images.SMThirdFeatured2, Images.SMThirdFeatured3, Images.SMThirdFeatured4].map((image, index) => (
                 <motion.div
                   key={index}
                   className='min-w-full snap-center hidden sm:block'
@@ -208,7 +223,7 @@ const SecondFeaturedProject = () => {
 
         <div className=' px-4 flex flex-col sm:flex-row sm:items-start gap-8'>
           <div className='space-y-4 flex-1 lg:sticky lg:top-12'>
-            <p className='font-champBlack text-xl sm:text-2xl'>Pharmacy Delivery Mobile App</p>
+            <p className='font-champBlack text-xl sm:text-2xl'>Conflict Prevention Web App</p>
             <motion.p
               className='text-sm sm:text-base'
               variants={containerVariants}
@@ -314,4 +329,4 @@ const SecondFeaturedProject = () => {
   )
 }
 
-export default SecondFeaturedProject
+export default ThirdFeaturedProject

@@ -12,24 +12,26 @@ const FeaturedProject = () => {
   const imageCount = 4 // Update this based on your actual images
 
   const Contributions = [
-    'Built and deployed the full MVP using Next.js for the frontend and Supabase for backend services.',
-    'Engineered a secure and scalable architecture supporting real-time data sync and audio transcription.',
-    'Integrated AI-powered transcription and text-to-SOAP formatting to streamline documentation workflows.',
-    'Designed a clean and responsive interface with Tailwind CSS, optimized for speed and usability.',
-    'Implemented authentication, role-based permissions, and protected routes to ensure data security.',
-    'Collaborated closely with clinicians to refine template design and note structure for practical, real-world use.',
-    'Managed version control, deployment, and feature iteration to align with clinical user feedback.'
-  ]
-
+    'Built the full MVP using Next.js for frontend and Supabase (Auth, Database, Storage) for backend services.',
+    'Designed a secure architecture supporting real-time data sync and audio transcription.',
+    'Integrated AI transcription (Whisper/OpenAI) and automated conversion of raw notes into structured SOAP format.',
+    'Created a clean and responsive interface with Tailwind CSS optimized for usability and speed.',
+    'Implemented authentication and role-based permissions to ensure secure access to sensitive data.',
+    'Collaborated with clinicians to refine templates and note structures for practical use.',
+    'Managed version control, deployments, and iterative improvements based on user feedback.'
+  ];
+  
   const Impact = [
-    'Reduced note creation time by over 40% for early clinical testers.',
+    'Reduced note creation time by 40%+ for early clinical testers.',
     'Provided a unified tool for voice, audio, and text-based SOAP documentation.',
-    'Helped professionals focus more on patient care and less on repetitive documentation.'
-  ]
-
+    'Helped clinicians focus more on patient care and less on repetitive documentation.'
+  ];
+  
   const description = `
-  Soapnotes.doctor is a web application built for healthcare professionals to simplify clinical documentation. It enables providers to record, upload, or write rough clinical notes, which are then transcribed and structured automatically into standardized SOAP formats.
-  `
+  Soapnotes.doctor is a web application built for healthcare professionals to simplify clinical documentation. 
+  It enables providers to record, upload, or write rough clinical notes, which are then transcribed and structured automatically into standardized SOAP formats.
+  `;
+  
 
   const splitDescription = description.split(' ')
 
@@ -201,7 +203,7 @@ const FeaturedProject = () => {
         </motion.div>
       </div>
 
-      <div className='flex flex-col sm:flex-row sm:items-start px-4'>
+      <div className='flex flex-col sm:flex-row sm:items-start px-4 gap-8'>
         <div className='space-y-4 flex-1 lg:sticky lg:top-12'>
           <p className='font-champBlack text-xl sm:text-2xl'>AI-powered Clinical Documentation Platform</p>
           <motion.p
@@ -226,7 +228,7 @@ const FeaturedProject = () => {
         </div>
 
         <div className='space-y-6 flex-1'>
-          <div className='space-y-8'>
+          <div className='space-y-4 sm:space-y-6'>
             <p className='text-sm sm:text-base font-semibold'>Key Contributions:</p>
             <div>
               <motion.ul
@@ -248,7 +250,7 @@ const FeaturedProject = () => {
                           className='rounded-full flex items-center justify-center text-sm sm:text-base bg-[#8BDFDD] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
                         >{paragraphIndex + 1}</div>
 
-                        <motion.p className='text-sm'>
+                        <motion.p className='text-sm sm:text-[15px] text-brand-white'>
                           {paragraph.split(' ').map((word, wordIndex) => (
                             <motion.span
                               key={wordIndex}
@@ -267,7 +269,7 @@ const FeaturedProject = () => {
             </div>
           </div>
 
-          <div className='space-y-8'>
+          <div className='space-y-4 sm:space-y-6'>
             <p className='text-sm s:text-base font-semibold'>Impact:</p>
             <div>
               <motion.ul
@@ -288,7 +290,7 @@ const FeaturedProject = () => {
                         <div
                           className='rounded-full flex items-center justify-center text-sm sm:text-base bg-[#EDB88B] text-brand-black min-w-6 min-h-6 w-6 h-6 mt-1'
                         >{i + 1}</div>
-                        <motion.p className='text-sm'>{paragraph.split(' ').map((word, wordIndex) => (
+                        <motion.p className='text-sm sm:text-[15px] text-brand-white'>{paragraph.split(' ').map((word, wordIndex) => (
                           <motion.span
                             key={wordIndex}
                             variants={wordVariants}

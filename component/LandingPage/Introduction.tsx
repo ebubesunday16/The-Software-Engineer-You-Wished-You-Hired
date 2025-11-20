@@ -14,8 +14,8 @@ const Introduction = () => {
   })
 
   const stickRef = useRef(null)
-  const isInView = useInView(stickRef, {  })
-  const PageView = useInView(pageRef, {  })
+  const isInView = useInView(stickRef, { once: true  })
+  const PageView = useInView(pageRef, { once: true })
 
   const [softwareText, setSoftwareText] = useState('Frontend')
 

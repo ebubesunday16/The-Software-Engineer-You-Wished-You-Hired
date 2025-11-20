@@ -24,6 +24,16 @@ import SMSecondFeatured3 from './second-featured-sm-3.png'
 import SMSecondFeatured4 from './second-featured-sm-4.png'
 import SMSecondFeatured5 from './second-featured-sm-5.png'
 
+import ThirdFeatured from './third-featured.png'
+import ThirdFeatured2 from './third-featured-2.png'
+import ThirdFeatured3 from './third-featured-3.png'
+import ThirdFeatured4 from './third-featured-4.png'
+
+import SMThirdFeatured from './third-featured-sm.png'
+import SMThirdFeatured2 from './third-featured-sm-2.png'
+import SMThirdFeatured3 from './third-featured-sm-3.png'
+import SMThirdFeatured4 from './third-featured-sm-4.png'
+
 import FinalMe from './FinalMe.png'
 import Zoom from './zoomzoom.png'
 
@@ -55,6 +65,16 @@ export const Images = {
     SMSecondFeatured3,
     SMSecondFeatured4,
     SMSecondFeatured5,
+
+    ThirdFeatured,
+    ThirdFeatured2,
+    ThirdFeatured3,
+    ThirdFeatured4,
+
+    SMThirdFeatured,
+    SMThirdFeatured2,
+    SMThirdFeatured3,
+    SMThirdFeatured4,
 
     Zoom,
     FinalMe,
