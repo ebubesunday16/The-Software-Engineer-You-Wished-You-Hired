@@ -108,11 +108,12 @@ const Stack = () => {
               }}
             >
               <p className='text-center sm:text-left'>
-                I usually adapt my stack to the project's needs, but I've worked the most with React, and Next.js for web, Nodejs for backend, PostgreSQL for databases, and React Native for mobile apps.
-              </p>
-              <p className='text-center sm:text-left'>
-                You may also find me playing around nest js, python, C++ as the project demands.
-              </p>
+  I tailor my tech stack to each project's needs, with deep experience in React and Next.js for web, Node.js and NestJS for backend, PostgreSQL and Firebase/Firestore for databases, and React Native for mobile apps. I’m also proficient with cloud platforms like Google Cloud, building scalable APIs, and integrating real-time data solutions.
+</p>
+<p className='text-center sm:text-left'>
+  Beyond my core stack, I enjoy exploring Python and C++ for specialized tasks, experimenting with AI-powered tools, and quickly adapting to new technologies to meet project demands efficiently.
+</p>
+
             </motion.div>
           </div>
 
