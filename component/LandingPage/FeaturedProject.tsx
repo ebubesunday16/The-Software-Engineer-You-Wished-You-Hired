@@ -12,7 +12,7 @@ const FeaturedProject = () => {
   const imageCount = 4 // Update this based on your actual images
 
   const Contributions = [
-    'Built the full MVP using Next.js for frontend and Supabase (Auth, Database, Storage) for backend services.',
+    'Built the full MVP using Next.js for frontend and Supabase (Auth, Database, Storage) for backend services...',
     'Designed a secure architecture supporting real-time data sync and audio transcription.',
     'Integrated AI transcription (Whisper/OpenAI) and automated conversion of raw notes into structured SOAP format.',
     'Created a clean and responsive interface with Tailwind CSS optimized for usability and speed.',
